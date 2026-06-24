@@ -35,7 +35,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0;
@@ -46,7 +45,6 @@
       align-items: center;
       justify-content: space-between;
       padding: 24px 48px;
-      mix-blend-mode: normal;
     }
 
     .nav-logo {
@@ -71,9 +69,7 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover {
-      color: var(--white);
-    }
+    .nav-links a:hover { color: var(--white); }
 
     .nav-cta {
       font-size: 0.875rem;
@@ -86,11 +82,8 @@
       transition: opacity 0.2s;
     }
 
-    .nav-cta:hover {
-      opacity: 0.85;
-    }
+    .nav-cta:hover { opacity: 0.85; }
 
-    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -134,9 +127,7 @@
       max-width: 900px;
     }
 
-    .hero-title span {
-      color: var(--accent);
-    }
+    .hero-title span { color: var(--accent); }
 
     .hero-sub {
       font-size: clamp(1rem, 2vw, 1.25rem);
@@ -164,10 +155,7 @@
       transition: opacity 0.2s, transform 0.2s;
     }
 
-    .btn-primary:hover {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
 
     .btn-ghost {
       color: rgba(255,255,255,0.6);
@@ -180,21 +168,11 @@
       transition: color 0.2s;
     }
 
-    .btn-ghost:hover {
-      color: var(--white);
-    }
+    .btn-ghost:hover { color: var(--white); }
+    .btn-ghost svg { transition: transform 0.2s; }
+    .btn-ghost:hover svg { transform: translateX(3px); }
 
-    .btn-ghost svg {
-      transition: transform 0.2s;
-    }
-
-    .btn-ghost:hover svg {
-      transform: translateX(3px);
-    }
-
-    /* ── SCROLL TRIGGER SECTION ── */
     .video-scroll-section {
-      /* tall enough so we have room to animate */
       height: 400vh;
       position: relative;
     }
@@ -209,15 +187,12 @@
       justify-content: center;
     }
 
-    /* The video container: starts small in bottom-right, grows to full */
     .video-box {
       position: absolute;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 32px 80px rgba(0,0,0,0.6);
       will-change: transform, width, height, border-radius;
-      transition: border-radius 0.05s linear;
-      /* initial state set by JS */
     }
 
     .video-box video {
@@ -227,7 +202,6 @@
       display: block;
     }
 
-    /* overlay text that fades out as video expands */
     .video-caption {
       position: absolute;
       bottom: 0;
@@ -236,7 +210,6 @@
       padding: 32px 36px;
       background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
       pointer-events: none;
-      transition: opacity 0.1s;
     }
 
     .video-caption h3 {
@@ -250,7 +223,6 @@
       color: rgba(255,255,255,0.6);
     }
 
-    /* scroll hint */
     .scroll-hint {
       position: absolute;
       bottom: 40px;
@@ -268,16 +240,13 @@
       pointer-events: none;
     }
 
-    .scroll-hint svg {
-      opacity: 0.5;
-    }
+    .scroll-hint svg { opacity: 0.5; }
 
     @keyframes fadeUpDown {
       0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
       50% { transform: translateX(-50%) translateY(6px); opacity: 1; }
     }
 
-    /* label that appears while video is small */
     .video-scroll-label {
       position: absolute;
       top: 50%;
@@ -285,7 +254,6 @@
       transform: translate(-50%, -50%);
       text-align: center;
       pointer-events: none;
-      transition: opacity 0.15s;
     }
 
     .video-scroll-label h2 {
@@ -302,7 +270,6 @@
       max-width: 380px;
     }
 
-    /* ── FEATURES ── */
     .features {
       padding: 120px 48px;
       max-width: 1200px;
@@ -368,7 +335,6 @@
       line-height: 1.65;
     }
 
-    /* ── FOOTER ── */
     footer {
       border-top: 1px solid rgba(255,255,255,0.07);
       padding: 48px;
@@ -393,7 +359,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">Lumen</a>
     <ul class="nav-links">
@@ -405,7 +370,6 @@
     <a href="#" class="nav-cta">Get started</a>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
@@ -424,20 +388,14 @@
     </div>
   </section>
 
-  <!-- SCROLL VIDEO SECTION -->
   <section class="video-scroll-section" id="demo">
     <div class="video-sticky-wrap" id="stickyWrap">
-
-      <!-- background copy text (fades out) -->
       <div class="video-scroll-label" id="scrollLabel">
         <h2>Built for<br />teams that move</h2>
         <p>Scroll to see Lumen in action</p>
       </div>
-
-      <!-- the video box -->
       <div class="video-box" id="videoBox">
-        <video autoplay muted loop playsinline poster="">
-          <!-- Replace src with your actual video file -->
+        <video autoplay muted loop playsinline>
           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
         </video>
         <div class="video-caption" id="videoCaption">
@@ -445,19 +403,15 @@
           <p>Real-time operational overview</p>
         </div>
       </div>
-
-      <!-- scroll hint (fades out on scroll) -->
       <div class="scroll-hint" id="scrollHint">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
           <path d="M10 4v12M4 10l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         Scroll
       </div>
-
     </div>
   </section>
 
-  <!-- FEATURES -->
   <section class="features">
     <span class="section-tag">Why Lumen</span>
     <h2 class="section-title">Everything you need to stay in control</h2>
@@ -503,76 +457,50 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2026 Lumen. All rights reserved.</p>
     <p>Made with care for teams everywhere.</p>
   </footer>
 
   <script>
-    const section   = document.getElementById('demo');
-    const sticky    = document.getElementById('stickyWrap');
-    const box       = document.getElementById('videoBox');
-    const label     = document.getElementById('scrollLabel');
-    const hint      = document.getElementById('scrollHint');
-    const caption   = document.getElementById('videoCaption');
+    const section = document.getElementById('demo');
+    const box     = document.getElementById('videoBox');
+    const label   = document.getElementById('scrollLabel');
+    const hint    = document.getElementById('scrollHint');
+    const caption = document.getElementById('videoCaption');
 
-    // Small size: bottom-right corner
-    const SMALL_W  = 320;
-    const SMALL_H  = 200;
-    const MARGIN   = 32;
+    const SMALL_W = 320;
+    const SMALL_H = 200;
+    const MARGIN  = 32;
 
-    // Full size: entire viewport
     const FULL_W   = () => window.innerWidth;
     const FULL_H   = () => window.innerHeight;
-
-    // Small position (bottom-right)
     const smallLeft = () => window.innerWidth  - SMALL_W - MARGIN;
     const smallTop  = () => window.innerHeight - SMALL_H - MARGIN;
 
     function lerp(a, b, t) { return a + (b - a) * t; }
     function clamp(v, lo, hi) { return Math.min(Math.max(v, lo), hi); }
-    function easeInOut(t) {
-      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-    }
+    function easeInOut(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
 
     function update() {
       const sectionTop    = section.offsetTop;
       const sectionHeight = section.offsetHeight;
       const viewH         = window.innerHeight;
-
-      // how far we've scrolled into the section (0 → 1)
       const raw = (window.scrollY - sectionTop) / (sectionHeight - viewH);
       const t   = clamp(raw, 0, 1);
       const e   = easeInOut(t);
 
-      // Interpolate dimensions
-      const w = lerp(SMALL_W,  FULL_W(), e);
-      const h = lerp(SMALL_H,  FULL_H(), e);
+      box.style.width        = lerp(SMALL_W, FULL_W(), e) + 'px';
+      box.style.height       = lerp(SMALL_H, FULL_H(), e) + 'px';
+      box.style.left         = lerp(smallLeft(), 0, e) + 'px';
+      box.style.top          = lerp(smallTop(),  0, e) + 'px';
+      box.style.borderRadius = lerp(20, 0, e) + 'px';
 
-      // Interpolate position (top-left corner of box)
-      const left = lerp(smallLeft(), 0, e);
-      const top  = lerp(smallTop(),  0, e);
-
-      // Border radius: 20px → 0px
-      const br = lerp(20, 0, e);
-
-      box.style.width        = w + 'px';
-      box.style.height       = h + 'px';
-      box.style.left         = left + 'px';
-      box.style.top          = top  + 'px';
-      box.style.borderRadius = br + 'px';
-
-      // Fade label & hint out in first 30% of scroll
-      const labelOpacity = clamp(1 - t / 0.3, 0, 1);
-      label.style.opacity   = labelOpacity;
+      label.style.opacity   = clamp(1 - t / 0.3,  0, 1);
       hint.style.opacity    = clamp(1 - t / 0.15, 0, 1);
-
-      // Fade caption out as we expand
-      caption.style.opacity = clamp(1 - e / 0.6, 0, 1);
+      caption.style.opacity = clamp(1 - e / 0.6,  0, 1);
     }
 
-    // Set initial state before first paint
     function init() {
       box.style.position = 'absolute';
       box.style.left     = smallLeft() + 'px';
@@ -585,7 +513,7 @@
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', init,   { passive: true });
     init();
-  </script>
+  <\/script>
 
 </body>
 </html>
