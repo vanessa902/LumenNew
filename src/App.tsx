@@ -6,10 +6,10 @@ import { PrismaFeatures } from './components/PrismaFeatures'
 export default function App() {
   return (
     <main style={{ background: '#000' }}>
-      <RedstoneHero />
       <PrismaHero />
       <PrismaAbout />
       <PrismaFeatures />
+      <RedstoneHero />
     </main>
   )
 }
