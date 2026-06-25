@@ -10,7 +10,7 @@ export function PrismaHero() {
         <video
           autoPlay loop muted playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+          src="/LumenNew/download.mp4"
         />
         {/* Noise overlay */}
         <div className="noise-overlay absolute inset-0 opacity-[0.7] mix-blend-overlay pointer-events-none" />
