@@ -41,10 +41,12 @@ export function PrismaHero() {
         <div className="absolute bottom-0 left-0 right-0 grid grid-cols-12 items-end px-4 md:px-8 pb-6 md:pb-10 gap-4">
           <div className="col-span-12 lg:col-span-8">
             <h1
-              className="font-medium leading-[0.85] tracking-[-0.07em] text-[26vw] sm:text-[24vw] md:text-[22vw] lg:text-[20vw] xl:text-[19vw] 2xl:text-[20vw]"
+              className="font-medium leading-[0.85] tracking-[-0.07em] text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[10vw] xl:text-[9.5vw] 2xl:text-[10vw]"
               style={{ color: '#E1E0CC' }}
             >
               <WordsPullUp text="Prisma" showAsterisk />
+              <br />
+              <WordsPullUp text="One platform" />
             </h1>
           </div>
           <div className="col-span-12 lg:col-span-4 flex flex-col gap-6 pb-2">
