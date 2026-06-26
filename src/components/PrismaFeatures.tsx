@@ -56,22 +56,21 @@ function FeatureCard({ card, index }: { card: CardData; index: number }) {
   return (
     <motion.div
       ref={ref}
-      className="group/card bg-[#212121] rounded-2xl overflow-hidden flex flex-col h-64 lg:h-full"
+      className="bg-[#212121] rounded-2xl p-0 flex flex-col h-64 lg:h-full"
       initial={{ scale: 0.95, opacity: 0 }}
       animate={inView ? { scale: 1, opacity: 1 } : {}}
       transition={{ delay: index * 0.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      {/* Image with zoom on hover */}
-      <div className="overflow-hidden h-36 lg:h-44 flex-shrink-0">
+      {/* Content */}
+      <div className="p-6 flex flex-col gap-4 flex-1">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded overflow-hidden flex-shrink-0">
         <img
           src={card.icon}
           alt=""
-          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover/card:scale-110"
+          className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-150"
         />
       </div>
-      {/* Content */}
-      <div className="p-4 flex flex-col gap-3 flex-1">
-        <div className="flex items-start justify-between">
+      <div className="flex items-start justify-between">
           <h3 className="text-primary font-medium text-sm sm:text-base">{card.title}</h3>
           <span className="text-gray-500 text-xs">{card.num}</span>
         </div>
