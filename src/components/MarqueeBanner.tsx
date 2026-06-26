@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react'
-
 const TEXT = 'Book a Demo  ✦  '
 const REPEAT = 12
 
