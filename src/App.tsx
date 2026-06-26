@@ -1,6 +1,7 @@
 import { PrismaHero } from './components/PrismaHero'
 import { PrismaAbout } from './components/PrismaAbout'
 import { PrismaFeatures } from './components/PrismaFeatures'
+import { AirlumeSection } from './components/AirlumeSection'
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
       <PrismaHero />
       <PrismaAbout />
       <PrismaFeatures />
+      <AirlumeSection />
     </main>
   )
 }
