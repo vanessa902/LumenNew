@@ -46,7 +46,7 @@ function FeatureCard({ card, index }: { card: CardData; index: number }) {
         transition={{ delay: index * 0.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover"
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4"
+          src="/LumenNew/feature.mp4"
         />
         <div className="absolute bottom-4 left-4 text-sm font-medium" style={{ color: '#E1E0CC' }}>Your creative canvas.</div>
       </motion.div>
