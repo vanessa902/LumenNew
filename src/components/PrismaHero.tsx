@@ -1,39 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import { useEffect, useState } from 'react'
 import { ParallaxMockup } from './ParallaxMockup'
-
-const TYPEWRITER_TEXT = 'One plataform'
-
-function TypeWriter() {
-  const [displayed, setDisplayed] = useState('')
-  const [done, setDone] = useState(false)
-
-  useEffect(() => {
-    let i = 0
-    const interval = setInterval(() => {
-      i++
-      setDisplayed(TYPEWRITER_TEXT.slice(0, i))
-      if (i >= TYPEWRITER_TEXT.length) {
-        clearInterval(interval)
-        setDone(true)
-      }
-    }, 80)
-    return () => clearInterval(interval)
-  }, [])
-
-  return (
-    <span>
-      {displayed}
-      {!done && (
-        <span
-          className="inline-block w-[3px] align-middle ml-1 animate-pulse"
-          style={{ height: '0.8em', background: '#E1E0CC', borderRadius: 2 }}
-        />
-      )}
-    </span>
-  )
-}
 
 export function PrismaHero() {
   return (
@@ -71,12 +38,12 @@ export function PrismaHero() {
         </div>
 
         {/* Parallax mockup — flush to section bottom, 20% smaller */}
-        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end pointer-events-none z-10 px-4" style={{ paddingBottom: '10%' }}>
+        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end pointer-events-none z-10 px-4">
           <p
-            className="font-semibold leading-[0.85] tracking-[-0.07em] text-[11.7vw] sm:text-[10.8vw] md:text-[9.9vw] lg:text-[9vw] xl:text-[8.55vw] 2xl:text-[9vw] mb-2"
+            className="font-semibold leading-[0.85] tracking-[-0.07em] text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[10vw] xl:text-[9.5vw] 2xl:text-[10vw] mb-2"
             style={{ color: '#E1E0CC', textShadow: '0 4px 32px rgba(0,0,0,0.7), 0 1px 8px rgba(0,0,0,0.5)' }}
           >
-            <TypeWriter />
+            One plataform
           </p>
           <div style={{ width: '64%' }}>
             <ParallaxMockup />
