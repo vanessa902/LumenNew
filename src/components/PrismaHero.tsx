@@ -40,10 +40,10 @@ export function PrismaHero() {
         {/* Parallax mockup — flush to section bottom, 20% smaller */}
         <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end pointer-events-none z-10 px-4">
           <p
-            className="text-xs sm:text-sm tracking-widest uppercase mb-3 font-medium"
+            className="font-medium leading-[0.85] tracking-[-0.07em] text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[10vw] xl:text-[9.5vw] 2xl:text-[10vw] mb-2"
             style={{ color: '#E1E0CC' }}
           >
-            One platform
+            One plataform
           </p>
           <div style={{ width: '64%' }}>
             <ParallaxMockup />
