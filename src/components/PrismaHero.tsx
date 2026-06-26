@@ -44,7 +44,8 @@ export function PrismaHero() {
 
         {/* Navbar */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
-          <div className="bg-black rounded-b-2xl md:rounded-b-3xl px-4 py-2 md:px-8">
+          <div className="bg-black rounded-b-2xl md:rounded-b-3xl px-4 py-2 md:px-8 flex items-center gap-4 md:gap-8">
+            <img src="/LumenNew/logo.svg" alt="Logo" className="h-6 md:h-7 w-auto" />
             <nav className="flex items-center gap-3 sm:gap-6 md:gap-12 lg:gap-14">
               {['Our story', 'Collective', 'Workshops', 'Programs', 'Inquiries'].map(item => (
                 <a
