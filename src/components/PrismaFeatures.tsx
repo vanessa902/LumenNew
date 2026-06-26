@@ -47,12 +47,23 @@ function FeatureCard({ card }: { card: FeatureCardData }) {
   return (
     <div className="bg-[#212121] rounded-2xl flex flex-col h-full w-[260px] sm:w-[280px] flex-shrink-0">
       <div className="p-6 flex flex-col gap-4 flex-1">
-        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded overflow-hidden flex-shrink-0">
-          <img
-            src={card.icon}
-            alt=""
-            className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-150"
-          />
+        <div
+          className="rounded overflow-hidden flex-shrink-0"
+          style={{
+            width: '2.5rem',
+            height: '2.5rem',
+            transition: 'width 400ms ease, height 400ms ease',
+          }}
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLDivElement).style.width = '3.75rem'
+            ;(e.currentTarget as HTMLDivElement).style.height = '3.75rem'
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLDivElement).style.width = '2.5rem'
+            ;(e.currentTarget as HTMLDivElement).style.height = '2.5rem'
+          }}
+        >
+          <img src={card.icon} alt="" className="w-full h-full object-cover" />
         </div>
         <div className="flex items-start justify-between">
           <h3 className="text-primary font-medium text-sm sm:text-base">{card.title}</h3>
