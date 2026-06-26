@@ -97,11 +97,10 @@ export function PrismaFeatures() {
     <section className="min-h-screen bg-black py-20 px-4 md:px-8 relative">
       <div className="bg-noise absolute inset-0 opacity-[0.15] pointer-events-none" />
       <div className="relative max-w-7xl mx-auto">
-        <div className="text-center mb-12 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal">
+        <div className="text-center mb-12 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
           <WordsPullUpMultiStyle
             segments={[
-              { text: 'Studio-grade workflows for visionary creators.', className: 'text-primary' },
-              { text: ' Built for pure vision. Powered by art.', className: 'text-gray-500' },
+              { text: 'Everything You Need to Run Your Business', className: 'text-primary font-semibold' },
             ]}
           />
         </div>
