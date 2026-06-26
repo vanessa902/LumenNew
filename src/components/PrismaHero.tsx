@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { WordsPullUp } from './WordsPullUp'
+import { ParallaxMockup } from './ParallaxMockup'
 
 export function PrismaHero() {
   return (
@@ -37,8 +38,13 @@ export function PrismaHero() {
           </div>
         </div>
 
+        {/* Parallax mockup — sits just above the bottom text, flush to the section end */}
+        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end pb-[160px] md:pb-[180px] pointer-events-none z-10 px-4">
+          <ParallaxMockup />
+        </div>
+
         {/* Hero content */}
-        <div className="absolute bottom-0 left-0 right-0 grid grid-cols-12 items-end px-4 md:px-8 pb-6 md:pb-10 gap-4">
+        <div className="absolute bottom-0 left-0 right-0 grid grid-cols-12 items-end px-4 md:px-8 pb-6 md:pb-10 gap-4 z-20">
           <div className="col-span-12 lg:col-span-8">
             <h1
               className="font-medium leading-[0.85] tracking-[-0.07em] text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[10vw] xl:text-[9.5vw] 2xl:text-[10vw]"
