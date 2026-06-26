@@ -40,8 +40,8 @@ export function PrismaHero() {
         {/* Parallax mockup — flush to section bottom, 20% smaller */}
         <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end pointer-events-none z-10 px-4">
           <p
-            className="font-medium leading-[0.85] tracking-[-0.07em] text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[10vw] xl:text-[9.5vw] 2xl:text-[10vw] mb-2"
-            style={{ color: '#E1E0CC' }}
+            className="font-semibold leading-[0.85] tracking-[-0.07em] text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[10vw] xl:text-[9.5vw] 2xl:text-[10vw] mb-2"
+            style={{ color: '#E1E0CC', textShadow: '0 4px 32px rgba(0,0,0,0.7), 0 1px 8px rgba(0,0,0,0.5)' }}
           >
             One plataform
           </p>
@@ -51,31 +51,19 @@ export function PrismaHero() {
         </div>
 
         {/* Hero content */}
-        <div className="absolute bottom-0 left-0 right-0 flex justify-end px-4 md:px-8 pb-6 md:pb-10 z-20">
-          <div className="flex flex-col gap-6 pb-2 max-w-xs lg:max-w-sm">
-            <motion.p
-              className="text-primary/70 text-xs sm:text-sm md:text-base"
-              style={{ lineHeight: 1.2 }}
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            >
-              Prisma is a worldwide network of visual artists, filmmakers and storytellers bound not by place, status or labels but by passion and hunger to unlock potential through our unique perspectives.
-            </motion.p>
-            <motion.button
-              className="group bg-primary text-black font-medium text-sm sm:text-base rounded-full flex items-center gap-2 hover:gap-3 transition-all w-fit pl-5 pr-1 py-1"
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.7, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            >
-              Join the lab
-              <span className="bg-black rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <ArrowRight className="text-primary w-4 h-4" />
-              </span>
-            </motion.button>
-          </div>
+        <div className="absolute bottom-0 left-0 right-0 flex justify-center px-4 md:px-8 pb-6 md:pb-10 z-20">
+          <motion.button
+            className="group bg-primary text-black font-medium text-sm sm:text-base rounded-full flex items-center gap-2 hover:gap-3 transition-all w-fit pl-5 pr-1 py-1"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Join the lab
+            <span className="bg-black rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <ArrowRight className="text-primary w-4 h-4" />
+            </span>
+          </motion.button>
         </div>
       </div>
     </section>
