@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
-import { ArrowRight, ChevronDown } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Hls from 'hls.js'
 
 const VIDEO_SRC = 'https://stream.mux.com/T6oQJQ02cQ6N01TR6iHwZkKFkbepS34dkkIc9iukgy400g.m3u8'
@@ -8,36 +8,7 @@ const POSTER = 'https://images.unsplash.com/photo-1647356191320-d7a1f80ca777?cro
 
 function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent px-6 py-4 flex items-center justify-between">
-      <div>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="2" fill="white" />
-          {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
-            <line
-              key={i}
-              x1="12" y1="12"
-              x2={12 + 9 * Math.cos((angle * Math.PI) / 180)}
-              y2={12 + 9 * Math.sin((angle * Math.PI) / 180)}
-              stroke="white"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          ))}
-        </svg>
-      </div>
-      <div className="hidden md:flex items-center gap-8">
-        {['Products', 'Customer Stories', 'Resources', 'Pricing'].map(item => (
-          <a
-            key={item}
-            href="#"
-            className="text-white/80 hover:text-white text-sm font-medium flex items-center gap-1 transition-colors"
-            style={{ fontFamily: "'Instrument Sans', sans-serif" }}
-          >
-            {item}
-            {item === 'Products' && <ChevronDown className="w-3.5 h-3.5" />}
-          </a>
-        ))}
-      </div>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent px-6 py-4 flex items-center justify-end">
       <div className="flex items-center gap-4">
         <a href="#" className="hidden sm:block text-white/80 hover:text-white text-sm font-medium transition-colors" style={{ fontFamily: "'Instrument Sans', sans-serif" }}>
           Book A Demo
