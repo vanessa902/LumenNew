@@ -42,10 +42,14 @@ export function PrismaHero() {
         {/* Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
 
+        {/* Logo top-left */}
+        <div className="absolute top-4 left-4 md:top-6 md:left-6 z-10">
+          <img src="/LumenNew/logo.svg" alt="Logo" className="h-8 md:h-10 w-auto" />
+        </div>
+
         {/* Navbar */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
           <div className="bg-black rounded-b-2xl md:rounded-b-3xl px-4 py-2 md:px-8 flex items-center gap-4 md:gap-8">
-            <img src="/LumenNew/logo.svg" alt="Logo" className="h-6 md:h-7 w-auto" />
             <nav className="flex items-center gap-3 sm:gap-6 md:gap-12 lg:gap-14">
               {['Our story', 'Collective', 'Workshops', 'Programs', 'Inquiries'].map(item => (
                 <a
