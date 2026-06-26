@@ -57,15 +57,15 @@ export function PrismaAbout() {
         <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl mx-auto leading-[0.95] sm:leading-[0.9] mb-10">
           <TypewriterSegments
             segments={[
-              { text: 'The', className: 'font-light text-primary' },
-              { text: ' all-in-one', className: 'font-black text-primary' },
-              { text: ' operating', className: 'font-light text-primary' },
-              { text: ' system', className: 'font-black text-primary' },
-              { text: ' for', className: 'font-light text-primary' },
-              { text: ' contractors', className: 'font-black text-primary' },
-              { text: ' and', className: 'font-light text-primary' },
-              { text: ' service', className: 'font-black text-primary' },
-              { text: ' businesses.', className: 'font-light text-primary' },
+              { text: 'The', className: 'font-medium text-primary' },
+              { text: ' all-in-one', className: 'font-medium text-primary' },
+              { text: ' operating', className: 'font-medium text-primary' },
+              { text: ' system', className: 'font-medium text-primary' },
+              { text: ' for', className: 'font-medium text-primary' },
+              { text: ' contractors', className: 'font-medium text-primary' },
+              { text: ' and', className: 'font-medium text-primary' },
+              { text: ' service', className: 'font-medium text-primary' },
+              { text: ' businesses.', className: 'font-medium text-primary' },
             ]}
           />
         </div>
