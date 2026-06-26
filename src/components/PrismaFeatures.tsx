@@ -56,28 +56,38 @@ function FeatureCard({ card, index }: { card: CardData; index: number }) {
   return (
     <motion.div
       ref={ref}
-      className="bg-[#212121] rounded-2xl p-6 flex flex-col gap-4 h-64 lg:h-full"
+      className="group/card bg-[#212121] rounded-2xl overflow-hidden flex flex-col h-64 lg:h-full"
       initial={{ scale: 0.95, opacity: 0 }}
       animate={inView ? { scale: 1, opacity: 1 } : {}}
       transition={{ delay: index * 0.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      <img src={card.icon} alt="" className="w-10 h-10 sm:w-12 sm:h-12 rounded object-cover" />
-      <div className="flex items-start justify-between">
-        <h3 className="text-primary font-medium text-sm sm:text-base">{card.title}</h3>
-        <span className="text-gray-500 text-xs">{card.num}</span>
+      {/* Image with zoom on hover */}
+      <div className="overflow-hidden h-36 lg:h-44 flex-shrink-0">
+        <img
+          src={card.icon}
+          alt=""
+          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover/card:scale-110"
+        />
       </div>
-      <ul className="flex flex-col gap-2 flex-1">
-        {card.items.map((item, i) => (
-          <li key={i} className="flex items-start gap-2">
-            <Check className="text-primary w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
-            <span className="text-gray-400 text-xs leading-relaxed">{item}</span>
-          </li>
-        ))}
-      </ul>
-      <button className="flex items-center gap-1 text-primary text-xs font-medium group w-fit">
-        Learn more
-        <ArrowRight className="w-3.5 h-3.5 -rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-      </button>
+      {/* Content */}
+      <div className="p-4 flex flex-col gap-3 flex-1">
+        <div className="flex items-start justify-between">
+          <h3 className="text-primary font-medium text-sm sm:text-base">{card.title}</h3>
+          <span className="text-gray-500 text-xs">{card.num}</span>
+        </div>
+        <ul className="flex flex-col gap-1.5 flex-1">
+          {card.items.map((item, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <Check className="text-primary w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+              <span className="text-gray-400 text-xs leading-relaxed">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <button className="flex items-center gap-1 text-primary text-xs font-medium group w-fit">
+          Learn more
+          <ArrowRight className="w-3.5 h-3.5 -rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+        </button>
+      </div>
     </motion.div>
   )
 }
