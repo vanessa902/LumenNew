@@ -55,8 +55,8 @@ function FeatureCard({ card }: { card: FeatureCardData }) {
             transition: 'width 400ms ease, height 400ms ease',
           }}
           onMouseEnter={e => {
-            (e.currentTarget as HTMLDivElement).style.width = '3.75rem'
-            ;(e.currentTarget as HTMLDivElement).style.height = '3.75rem'
+            (e.currentTarget as HTMLDivElement).style.width = '7.5rem'
+            ;(e.currentTarget as HTMLDivElement).style.height = '7.5rem'
           }}
           onMouseLeave={e => {
             (e.currentTarget as HTMLDivElement).style.width = '2.5rem'
