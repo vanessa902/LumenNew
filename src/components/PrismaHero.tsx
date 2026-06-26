@@ -1,6 +1,31 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { ParallaxMockup } from './ParallaxMockup'
+
+function TypeWriter({ text }: { text: string }) {
+  const [displayed, setDisplayed] = useState('')
+  const [done, setDone] = useState(false)
+
+  useEffect(() => {
+    let i = 0
+    const interval = setInterval(() => {
+      i++
+      setDisplayed(text.slice(0, i))
+      if (i >= text.length) { clearInterval(interval); setDone(true) }
+    }, 80)
+    return () => clearInterval(interval)
+  }, [text])
+
+  return (
+    <span>
+      {displayed}
+      {!done && (
+        <span className="inline-block w-[3px] align-middle ml-1 animate-pulse" style={{ height: '0.8em', background: '#E1E0CC', borderRadius: 2 }} />
+      )}
+    </span>
+  )
+}
 
 export function PrismaHero() {
   return (
@@ -43,7 +68,7 @@ export function PrismaHero() {
             className="font-semibold leading-[0.85] tracking-[-0.07em] text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[10vw] xl:text-[9.5vw] 2xl:text-[10vw] mb-2"
             style={{ color: '#E1E0CC', textShadow: '0 4px 32px rgba(0,0,0,0.7), 0 1px 8px rgba(0,0,0,0.5)' }}
           >
-            One plataform
+            <TypeWriter text="One plataform" />
           </p>
           <div style={{ width: '64%' }}>
             <ParallaxMockup />
