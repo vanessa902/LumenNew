@@ -38,9 +38,11 @@ export function PrismaHero() {
           </div>
         </div>
 
-        {/* Parallax mockup — sits just above the bottom text, flush to the section end */}
-        <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end pb-[160px] md:pb-[180px] pointer-events-none z-10 px-4">
-          <ParallaxMockup />
+        {/* Parallax mockup — flush to section bottom, 20% smaller */}
+        <div className="absolute bottom-0 left-0 right-0 flex justify-center items-end pointer-events-none z-10 px-4">
+          <div style={{ width: '64%' }}>
+            <ParallaxMockup />
+          </div>
         </div>
 
         {/* Hero content */}

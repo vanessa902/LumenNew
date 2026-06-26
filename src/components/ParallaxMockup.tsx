@@ -49,7 +49,7 @@ export function ParallaxMockup() {
 
   return (
     <div
-      className="w-[min(1200px,95vw)] mx-auto pointer-events-none select-none"
+      className="w-full pointer-events-none select-none"
       style={{ perspective: '1400px' }}
     >
       <div
