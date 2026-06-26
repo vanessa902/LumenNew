@@ -9,8 +9,8 @@ export default function App() {
     <main style={{ background: '#000' }}>
       <PrismaHero />
       <PrismaAbout />
-      <MarqueeBanner />
       <PrismaFeatures />
+      <MarqueeBanner />
       <AIHero />
     </main>
   )
