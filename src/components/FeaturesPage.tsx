@@ -92,7 +92,7 @@ export function FeaturesPage() {
         <div className="container">
           <div className="features-heading">
             <span className="features-heading-label">Visual arts</span>
-            <TypewriterSegments text="The all-in-one operating system for contractors and service businesses." />
+            <TypewriterSegments text="For the modern service companies" />
           </div>
           <main>
             <ul ref={listRef} {...dragHandlers}>
