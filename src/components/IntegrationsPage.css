@@ -240,18 +240,12 @@
   animation: mkt-spin-right 30s linear infinite;
 }
 
-.integrations-page .mkt-count {
-  font-family: 'Urbanist', sans-serif;
-  font-size: 64px;
-  font-weight: 500;
-  color: #fff;
-}
-
-.integrations-page .mkt-count-label {
-  font-family: 'Urbanist', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
+.integrations-page .mkt-center-logo {
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 14px;
 }
 
 .integrations-page .mkt-avatar {

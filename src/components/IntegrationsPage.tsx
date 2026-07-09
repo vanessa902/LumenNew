@@ -39,30 +39,6 @@ function TypewriterHeading({ text, speed = 35, delay = 400 }: { text: string; sp
   )
 }
 
-function useCountUp(target: number, duration = 2000, delay = 1200) {
-  const [value, setValue] = useState(0)
-
-  useEffect(() => {
-    let raf: number
-    const timeout = setTimeout(() => {
-      const start = performance.now()
-      const tick = (now: number) => {
-        const t = Math.min(1, (now - start) / duration)
-        const eased = 1 - Math.pow(1 - t, 3)
-        setValue(Math.round(eased * target))
-        if (t < 1) raf = requestAnimationFrame(tick)
-      }
-      raf = requestAnimationFrame(tick)
-    }, delay)
-    return () => {
-      clearTimeout(timeout)
-      cancelAnimationFrame(raf)
-    }
-  }, [target, duration, delay])
-
-  return value
-}
-
 const AVATARS = [
   { url: 'https://polo-pecan-73837341.figma.site/_assets/v11/aa51718fb3af3637e6d666b6543fc27a175fada6.png', orbit: 1, angle: 270, radius: 177, size: 58, shape: 'square', glow: 'purple', delay: 0.6 },
   { url: 'https://polo-pecan-73837341.figma.site/_assets/v11/ca755f7f93c1126fb8bdbf99ab364a33aa9ab272.png', orbit: 2, angle: 60, radius: 251, size: 58, shape: 'round', glow: 'yellow', delay: 0.9 },
@@ -84,7 +60,6 @@ const LOGOS = [
 ]
 
 export function IntegrationsPage() {
-  const count = useCountUp(20)
   const containerRef = useRef<HTMLDivElement>(null)
 
   return (
@@ -126,8 +101,7 @@ export function IntegrationsPage() {
               <div className="mkt-orbit mkt-orbit-2" />
               <div className="mkt-orbit mkt-orbit-1">
                 <div className="mkt-orbit-center">
-                  <span className="mkt-count">{count}k+</span>
-                  <span className="mkt-count-label">Specialists</span>
+                  <img src="/LumenNew/icon-mark.svg" alt="Logo" className="mkt-center-logo" />
                 </div>
               </div>
 
