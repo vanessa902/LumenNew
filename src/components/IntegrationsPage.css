@@ -467,3 +467,107 @@
     height: 28px;
   }
 }
+
+.integrations-page .mkt-type-section {
+  position: relative;
+  background: #06060c;
+  background-image:
+    radial-gradient(ellipse 60% 100% at 0% 50%, rgba(42, 133, 255, 0.35), transparent 70%),
+    radial-gradient(ellipse 60% 100% at 100% 50%, rgba(42, 133, 255, 0.35), transparent 70%);
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  overflow: hidden;
+}
+
+.integrations-page .mkt-type-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.integrations-page .mkt-type-line {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.integrations-page .mkt-type-line--left {
+  justify-content: flex-start;
+}
+
+.integrations-page .mkt-type-line--right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.integrations-page .mkt-type-accent {
+  background: linear-gradient(90deg, #6f9dff, #2a85ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.integrations-page .mkt-type-dash {
+  flex: 1;
+  height: 1px;
+  min-width: 3rem;
+  background: linear-gradient(90deg, rgba(42, 133, 255, 0.6), rgba(255, 255, 255, 0.15));
+  position: relative;
+}
+
+.integrations-page .mkt-type-dash::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translate(50%, -50%) rotate(45deg);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.integrations-page .mkt-type-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+
+.integrations-page .mkt-type-cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(160deg, #2a85ff, #071a3d);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .integrations-page .mkt-type-line {
+    white-space: normal;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+  .integrations-page .mkt-type-dash {
+    display: none;
+  }
+}

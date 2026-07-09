@@ -129,6 +129,31 @@ export function IntegrationsPage() {
           </div>
         </div>
       </div>
+
+      <section className="mkt-type-section">
+        <div className="mkt-type-lines">
+          <div className="mkt-type-line mkt-type-line--left">
+            <span className="mkt-type-accent">Automate</span> Your Workflow
+            <span className="mkt-type-dash" />
+          </div>
+          <div className="mkt-type-line mkt-type-line--right">
+            <span className="mkt-type-accent">Supercharge</span> Your Sales Process
+          </div>
+          <div className="mkt-type-line mkt-type-line--left">
+            <span className="mkt-type-dash" />
+            <span className="mkt-type-accent">Unlock</span> Seamless Syncing
+          </div>
+        </div>
+        <button className="mkt-type-cta">
+          <span className="mkt-type-cta-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
+          Start Integrating
+        </button>
+      </section>
+
       <PrismaAbout />
     </div>
   )
