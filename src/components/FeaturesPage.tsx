@@ -98,7 +98,10 @@ export function FeaturesPage() {
 
   return (
     <div className="features-page">
-      <section className="h-screen p-4 md:p-6 relative" style={{ background: '#000' }}>
+      <section
+        className="h-screen p-4 md:p-6 relative"
+        style={{ background: "url('/LumenNew/features-bg.jpg') center center / cover no-repeat, #000" }}
+      >
         <SiteNavbar />
         <div className="container">
           <div className="features-heading">
