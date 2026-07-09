@@ -278,6 +278,7 @@
   left: 50%;
   overflow: hidden;
   opacity: 0;
+  box-sizing: border-box;
   animation: mkt-avatar-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -297,6 +298,16 @@
 
 .integrations-page .mkt-avatar--square24 {
   border-radius: 24px;
+}
+
+.integrations-page .mkt-avatar--logo {
+  border-radius: 50%;
+  background: #fff;
+  padding: 12px;
+}
+
+.integrations-page .mkt-avatar--logo img {
+  object-fit: contain;
 }
 
 .integrations-page .mkt-avatar--glow-purple {
