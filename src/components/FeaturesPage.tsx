@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
-import { ClipboardList, CalendarDays, DollarSign, MonitorPlay, Zap, Sun } from 'lucide-react'
+import { ClipboardList, CalendarDays, DollarSign, MonitorPlay, Zap, Sun, User, ClipboardCheck } from 'lucide-react'
 import { SiteNavbar } from './SiteNavbar'
 import './FeaturesPage.css'
 
@@ -86,6 +86,22 @@ const CARDS = [
     hasIcon: true,
     Icon: Sun,
     comingSoon: true,
+  },
+  {
+    title: 'Users & Offices',
+    description: 'People & Places. Manage your global workforce and office infrastructure in one place.',
+    img: '/LumenNew/scanifly/card6.png',
+    color: '#34C759',
+    hasIcon: true,
+    Icon: User,
+  },
+  {
+    title: 'Install Validation',
+    description: 'Our validation tool runs comprehensive checks to identify installation errors and environment mismatches in seconds.',
+    img: '/LumenNew/scanifly/card7.png',
+    color: '#FFCC00',
+    hasIcon: true,
+    Icon: ClipboardCheck,
   },
 ]
 
