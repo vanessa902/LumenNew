@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { SiteNavbar } from './SiteNavbar'
+import { PrismaAbout } from './PrismaAbout'
 import './IntegrationsPage.css'
 
 const HEADING = 'Smart integrations simplify your workflow'
@@ -128,6 +129,7 @@ export function IntegrationsPage() {
           </div>
         </div>
       </div>
+      <PrismaAbout />
     </div>
   )
 }
