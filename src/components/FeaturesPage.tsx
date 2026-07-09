@@ -94,10 +94,6 @@ export function FeaturesPage() {
             <span className="features-heading-label">Visual arts</span>
             <TypewriterSegments text="The all-in-one operating system for contractors and service businesses." />
           </div>
-          <header>
-            <h1>Features</h1>
-            <p>Every tool contractors and service businesses need, in one connected platform.</p>
-          </header>
           <main>
             <ul ref={listRef} {...dragHandlers}>
               {CARDS.map((card, i) => (

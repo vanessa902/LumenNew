@@ -5,6 +5,8 @@
   font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
   color: #E1E0CC;
   position: relative;
+  background: #000;
+  min-height: 100vh;
 }
 
 .features-page li article {
