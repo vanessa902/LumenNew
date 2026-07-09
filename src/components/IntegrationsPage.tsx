@@ -56,14 +56,6 @@ const ORBIT_WAVE: Record<number, { dir: 'left' | 'right'; duration: number }> = 
   4: { dir: 'left', duration: 12 },
 }
 
-const LOGOS = [
-  'https://polo-pecan-73837341.figma.site/_assets/v11/1e7b0e6fcc016cd28aec5c68990118b8c54c35a5.svg',
-  'https://polo-pecan-73837341.figma.site/_assets/v11/3eac03c183db2ae080d910159211c14843398b61.svg',
-  'https://polo-pecan-73837341.figma.site/_assets/v11/17705a4c0023a0e5a99154dfb10582adbbf4260b.svg',
-  'https://polo-pecan-73837341.figma.site/_assets/v11/0e5f442b09dc5c248e3e60d40a65505fb1887228.svg',
-  'https://polo-pecan-73837341.figma.site/_assets/v11/63f99030ceb459e3c9ab9e429cfa2353491d3816.svg',
-]
-
 export function IntegrationsPage() {
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -133,14 +125,6 @@ export function IntegrationsPage() {
                 )
               })}
             </div>
-          </div>
-        </div>
-
-        <div className="mkt-ticker">
-          <div className="mkt-ticker-track">
-            {Array.from({ length: 4 }).flatMap((_, r) =>
-              LOGOS.map((logo, i) => <img key={`${r}-${i}`} src={logo} alt="" className="mkt-ticker-logo" />)
-            )}
           </div>
         </div>
       </div>
