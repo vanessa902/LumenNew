@@ -40,10 +40,10 @@ function TypewriterSegments({ lines }: { lines: string[] }) {
 const CARDS = [
   {
     title: 'Taskboard',
-    label: 'Frame 2147225963',
     description: 'Visual workflow management for every stage of the job.',
     img: '/LumenNew/scanifly/card1.png',
     color: '#2A85FF',
+    hasIcon: true,
   },
   {
     title: 'Smart Critiques',
@@ -122,22 +122,21 @@ export function FeaturesPage() {
               {CARDS.map((card, i) => (
                 <li key={i}>
                   <article style={{ '--card-glow-color': card.color } as React.CSSProperties}>
-                    <span className="features-card-number">{i + 1}</span>
+                    {!card.hasIcon && <span className="features-card-number">{i + 1}</span>}
                     <div className="features-card-glow" />
-                    {card.label && (
+                    {card.hasIcon && (
                       <div className="features-card-icon">
                         <ClipboardList size={20} />
                       </div>
                     )}
-                    {card.label && <span className="features-card-label">{card.label}</span>}
                     <h3 className="features-card-title">{card.title}</h3>
                     {card.description && <p className="features-card-desc">{card.description}</p>}
-                    {!card.label && <a href="#">{card.title}</a>}
+                    {!card.hasIcon && <a href="#">{card.title}</a>}
                     <div className="features-card-media">
                       <img
                         src={card.img}
                         alt={card.title}
-                        className={card.label ? 'features-card-img--media' : i === 0 ? 'features-card-img--inset' : ''}
+                        className={card.hasIcon ? 'features-card-img--media' : ''}
                       />
                     </div>
                   </article>

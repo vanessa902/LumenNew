@@ -135,7 +135,7 @@
   mix-blend-mode: normal;
 }
 
-.features-page article:has(.features-card-label) {
+.features-page article:has(.features-card-icon) {
   justify-content: flex-start;
   padding: 1.25rem 1rem 0;
   gap: 0.5rem;
@@ -192,6 +192,7 @@
   object-fit: contain;
   object-position: center;
   mix-blend-mode: normal;
+  transform: scale(1.1);
 }
 
 .features-page .features-card-glow {
