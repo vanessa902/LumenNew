@@ -123,7 +123,7 @@ export function FeaturesPage() {
                     <a href="#">{card.title}</a>
                     <div>
                       <div className="features-card-glow" />
-                      <img src={card.img} alt={card.title} />
+                      <img src={card.img} alt={card.title} className={i === 0 ? 'features-card-img--inset' : ''} />
                     </div>
                   </article>
                 </li>

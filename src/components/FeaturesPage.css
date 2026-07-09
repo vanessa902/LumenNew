@@ -119,6 +119,20 @@
   mix-blend-mode: luminosity;
 }
 
+.features-page article > div img.features-card-img--inset {
+  inset: auto;
+  bottom: 12%;
+  left: 50%;
+  top: auto;
+  right: auto;
+  transform: translateX(-50%);
+  width: 55%;
+  height: auto;
+  max-height: 40%;
+  object-fit: contain;
+  mix-blend-mode: normal;
+}
+
 .features-page .features-card-glow {
   position: absolute;
   inset: 0;
