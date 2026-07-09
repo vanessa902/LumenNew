@@ -124,12 +124,12 @@ export function FeaturesPage() {
                   <article style={{ '--card-glow-color': card.color } as React.CSSProperties}>
                     <span className="features-card-number">{i + 1}</span>
                     <div className="features-card-glow" />
-                    {card.label && <span className="features-card-label">{card.label}</span>}
                     {card.label && (
                       <div className="features-card-icon">
                         <ClipboardList size={20} />
                       </div>
                     )}
+                    {card.label && <span className="features-card-label">{card.label}</span>}
                     <h3 className="features-card-title">{card.title}</h3>
                     {card.description && <p className="features-card-desc">{card.description}</p>}
                     {!card.label && <a href="#">{card.title}</a>}
