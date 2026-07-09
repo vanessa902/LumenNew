@@ -3,7 +3,7 @@ import { SiteNavbar } from './SiteNavbar'
 import './IntegrationsPage.css'
 
 const HEADING = 'Smart integrations simplify your workflow'
-const DARK_START = 18
+const DARK_START = 0
 
 function TypewriterHeading({ text, speed = 35, delay = 400 }: { text: string; speed?: number; delay?: number }) {
   const [count, setCount] = useState(0)
