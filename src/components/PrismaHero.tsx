@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { ParallaxMockup } from './ParallaxMockup'
+import { SiteNavbar } from './SiteNavbar'
 
 function TypeWriter({ text }: { text: string }) {
   const [displayed, setDisplayed] = useState('')
@@ -48,24 +49,7 @@ export function PrismaHero() {
         </div>
 
         {/* Navbar */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
-          <div className="bg-black rounded-b-2xl md:rounded-b-3xl px-4 py-2 md:px-8 flex items-center gap-4 md:gap-8">
-            <nav className="flex items-center gap-3 sm:gap-6 md:gap-12 lg:gap-14">
-              {['Home', 'Features', 'Integrations', 'About', 'Contact Us'].map(item => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-[10px] sm:text-xs md:text-sm font-medium transition-colors"
-                  style={{ color: 'rgba(225, 224, 204, 0.8)' }}
-                  onMouseEnter={e => (e.currentTarget.style.color = '#E1E0CC')}
-                  onMouseLeave={e => (e.currentTarget.style.color = 'rgba(225, 224, 204, 0.8)')}
-                >
-                  {item}
-                </a>
-              ))}
-            </nav>
-          </div>
-        </div>
+        <SiteNavbar />
 
         {/* Parallax mockup — flush to section bottom, 20% smaller */}
         <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-end pointer-events-none z-10 px-4">
