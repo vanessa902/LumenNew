@@ -39,7 +39,7 @@ function TypewriterSegments({ lines }: { lines: string[] }) {
 const CARDS = [
   {
     title: 'Install Tracker / CRM',
-    img: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171918_4a5edc79-d78f-4637-ac8b-53c43c220606.png&w=1280&q=85',
+    img: '/LumenNew/scanifly/card1.png',
     color: '#2A85FF',
   },
   {
