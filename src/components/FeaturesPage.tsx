@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
-import { ClipboardList, CalendarDays, DollarSign, MonitorPlay, Zap } from 'lucide-react'
+import { ClipboardList, CalendarDays, DollarSign, MonitorPlay, Zap, Sun } from 'lucide-react'
 import { SiteNavbar } from './SiteNavbar'
 import './FeaturesPage.css'
 
@@ -66,7 +66,7 @@ const CARDS = [
     title: 'Commission Tracker',
     description: 'Automatic payout calculation for setters, closers, managers.',
     img: '/LumenNew/scanifly/card3.png',
-    color: '#CB30E0',
+    color: '#FF8D28',
     hasIcon: true,
     Icon: DollarSign,
   },
@@ -74,14 +74,18 @@ const CARDS = [
     title: 'Proposal Presentations',
     description: 'Build and export standalone battery or solar proposals tailored for high-usage or outage-prone customers.',
     img: '/LumenNew/scanifly/card4.png',
-    color: '#AC7F5E',
+    color: '#CB30E0',
     hasIcon: true,
     Icon: MonitorPlay,
   },
   {
-    title: 'Asset Library',
-    img: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171741_ed9845ab-f5b2-4018-8ce7-07cc01823522.png&w=1280&q=85',
+    title: 'Solar Design Tool',
+    description: 'Create a highly accurate solar design by using our integrated Solar Design Tool.',
+    img: '/LumenNew/scanifly/card5.png',
     color: '#AC7F5E',
+    hasIcon: true,
+    Icon: Sun,
+    comingSoon: true,
   },
 ]
 
@@ -145,6 +149,7 @@ export function FeaturesPage() {
                     <h3 className="features-card-title">{card.title}</h3>
                     {card.description && <p className="features-card-desc">{card.description}</p>}
                     {!card.hasIcon && <a href="#">{card.title}</a>}
+                    {card.comingSoon && <span className="features-card-coming-soon">Coming Soon</span>}
                     <div className="features-card-media">
                       <img
                         src={card.img}
