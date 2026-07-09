@@ -154,7 +154,20 @@ export function IntegrationsPage() {
         </button>
       </section>
 
-      <PrismaAbout label="Explore integrations" />
+      <PrismaAbout
+        label="Explore integrations"
+        gradientHover
+        segments={[
+          { text: 'Connect', className: 'font-medium text-primary' },
+          { text: ' every', className: 'font-medium text-primary' },
+          { text: ' tool', className: 'font-medium text-primary' },
+          { text: ' your', className: 'font-medium text-primary' },
+          { text: ' business', className: 'font-medium text-primary' },
+          { text: ' already', className: 'font-medium text-primary' },
+          { text: ' runs', className: 'font-medium text-primary' },
+          { text: ' on.', className: 'font-medium text-primary' },
+        ]}
+      />
     </div>
   )
 }

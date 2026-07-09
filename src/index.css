@@ -22,3 +22,25 @@ body {
   background-repeat: repeat;
   background-size: 200px 200px;
 }
+
+.prisma-gradient-hover-wrap .text-primary {
+  transition: color 0.3s ease;
+}
+
+.prisma-gradient-hover-wrap:hover .text-primary {
+  background-image: linear-gradient(90deg, #6f9dff, #2a85ff, #6f9dff);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: prisma-gradient-move 3s linear infinite;
+}
+
+@keyframes prisma-gradient-move {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}

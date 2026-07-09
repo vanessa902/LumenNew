@@ -46,7 +46,27 @@ function TypewriterSegments({ segments }: { segments: Segment[] }) {
 
 const BODY_TEXT = "Over the last seven years, I have worked with Parallax, a Berlin-based production house that crafts cinema, series, and Noir Studio in Paris. Together, we have created work that has earned international acclaim at several major festivals."
 
-export function PrismaAbout({ label = 'Visual arts' }: { label?: string }) {
+const DEFAULT_SEGMENTS: Segment[] = [
+  { text: 'The', className: 'font-medium text-primary' },
+  { text: ' all-in-one', className: 'font-medium text-primary' },
+  { text: ' operating', className: 'font-medium text-primary' },
+  { text: ' system', className: 'font-medium text-primary' },
+  { text: ' for', className: 'font-medium text-primary' },
+  { text: ' contractors', className: 'font-medium text-primary' },
+  { text: ' and', className: 'font-medium text-primary' },
+  { text: ' service', className: 'font-medium text-primary' },
+  { text: ' businesses.', className: 'font-medium text-primary' },
+]
+
+export function PrismaAbout({
+  label = 'Visual arts',
+  segments = DEFAULT_SEGMENTS,
+  gradientHover = false,
+}: {
+  label?: string
+  segments?: Segment[]
+  gradientHover?: boolean
+}) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.8', 'end 0.2'] })
 
@@ -54,20 +74,10 @@ export function PrismaAbout({ label = 'Visual arts' }: { label?: string }) {
     <section className="bg-black py-20 px-4 md:px-8">
       <div className="bg-[#101010] max-w-6xl mx-auto rounded-2xl p-8 md:p-16 text-center">
         <span className="text-primary text-[10px] sm:text-xs uppercase tracking-widest block mb-8">{label}</span>
-        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl mx-auto leading-[0.95] sm:leading-[0.9] mb-10">
-          <TypewriterSegments
-            segments={[
-              { text: 'The', className: 'font-medium text-primary' },
-              { text: ' all-in-one', className: 'font-medium text-primary' },
-              { text: ' operating', className: 'font-medium text-primary' },
-              { text: ' system', className: 'font-medium text-primary' },
-              { text: ' for', className: 'font-medium text-primary' },
-              { text: ' contractors', className: 'font-medium text-primary' },
-              { text: ' and', className: 'font-medium text-primary' },
-              { text: ' service', className: 'font-medium text-primary' },
-              { text: ' businesses.', className: 'font-medium text-primary' },
-            ]}
-          />
+        <div
+          className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl mx-auto leading-[0.95] sm:leading-[0.9] mb-10 ${gradientHover ? 'prisma-gradient-hover-wrap' : ''}`}
+        >
+          <TypewriterSegments segments={segments} />
         </div>
         <p ref={ref} className="text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed" style={{ color: '#DEDBC8' }}>
           {BODY_TEXT.split('').map((char, i) => (
