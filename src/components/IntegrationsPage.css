@@ -39,7 +39,7 @@
 }
 
 .integrations-page .mkt-heading {
-  font-family: 'Urbanist', sans-serif;
+  font-family: 'Haffer X Trial', 'Space Grotesk', system-ui, sans-serif;
   font-size: 64px;
   font-weight: 600;
   line-height: 64px;
@@ -156,8 +156,8 @@
 
 .integrations-page .mkt-hero-right {
   position: relative;
-  width: 720px;
-  height: 720px;
+  width: 648px;
+  height: 648px;
   flex-shrink: 0;
   animation: mkt-scale-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
 }

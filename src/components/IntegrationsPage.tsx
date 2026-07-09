@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { SiteNavbar } from './SiteNavbar'
 import './IntegrationsPage.css'
 
-const HEADING = 'Unlock Top Marketing Talent You Thought Was Out of Reach — Now Just One Click Away!'
-const DARK_START = 67
+const HEADING = 'Smart integrations simplify your workflow'
+const DARK_START = 18
 
 function TypewriterHeading({ text, speed = 35, delay = 400 }: { text: string; speed?: number; delay?: number }) {
   const [count, setCount] = useState(0)
