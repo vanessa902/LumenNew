@@ -5,6 +5,7 @@ import { PrismaFeatures } from './components/PrismaFeatures'
 import { MarqueeBanner } from './components/MarqueeBanner'
 import { ImageScaleSection } from './components/ImageScaleSection'
 import { FeaturesPage } from './components/FeaturesPage'
+import { IntegrationsPage } from './components/IntegrationsPage'
 
 function Home() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/features" element={<FeaturesPage />} />
+      <Route path="/integrations" element={<IntegrationsPage />} />
     </Routes>
   )
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const NAV_ITEMS: { label: string; href: string }[] = [
   { label: 'Home', href: '/' },
   { label: 'Features', href: '/features' },
-  { label: 'Integrations', href: '/' },
+  { label: 'Integrations', href: '/integrations' },
   { label: 'About', href: '/' },
   { label: 'Contact Us', href: '/' },
 ]
