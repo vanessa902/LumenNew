@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
-import { ClipboardList, CalendarDays, DollarSign } from 'lucide-react'
+import { ClipboardList, CalendarDays, DollarSign, MonitorPlay } from 'lucide-react'
 import { SiteNavbar } from './SiteNavbar'
 import './FeaturesPage.css'
 
@@ -63,9 +63,12 @@ const CARDS = [
     Icon: DollarSign,
   },
   {
-    title: 'Color Engine',
-    img: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171918_4a5edc79-d78f-4637-ac8b-53c43c220606.png&w=1280&q=85',
-    color: '#FF8D28',
+    title: 'Proposal Presentations',
+    description: 'Build and export standalone battery or solar proposals tailored for high-usage or outage-prone customers.',
+    img: '/LumenNew/scanifly/card4.png',
+    color: '#CB30E0',
+    hasIcon: true,
+    Icon: MonitorPlay,
   },
   {
     title: 'Asset Library',
