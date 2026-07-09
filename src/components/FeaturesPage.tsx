@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
-import { ClipboardList, CalendarDays } from 'lucide-react'
+import { ClipboardList, CalendarDays, DollarSign } from 'lucide-react'
 import { SiteNavbar } from './SiteNavbar'
 import './FeaturesPage.css'
 
@@ -55,9 +55,12 @@ const CARDS = [
     Icon: CalendarDays,
   },
   {
-    title: 'Immersion Capsule',
-    img: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171809_f56666dc-c099-4778-ad82-9ad4f209567b.png&w=1280&q=85',
+    title: 'Commission Tracker',
+    description: 'Automatic payout calculation for setters, closers, managers.',
+    img: '/LumenNew/scanifly/card3.png',
     color: '#FF383C',
+    hasIcon: true,
+    Icon: DollarSign,
   },
   {
     title: 'Color Engine',
