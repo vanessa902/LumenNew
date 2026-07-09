@@ -108,12 +108,14 @@
   border-radius: 0.5rem;
 }
 
-.features-page article > div {
+.features-page article > div,
+.features-page .features-card-media {
   position: relative;
   flex: 1;
 }
 
-.features-page article > div img {
+.features-page article > div img,
+.features-page .features-card-media img {
   position: absolute;
   inset: 0;
   mix-blend-mode: luminosity;
@@ -130,6 +132,68 @@
   height: auto;
   max-height: 40%;
   object-fit: contain;
+  mix-blend-mode: normal;
+}
+
+.features-page article:has(.features-card-label) {
+  justify-content: flex-start;
+  padding: 1.25rem 1rem 0;
+  gap: 0.5rem;
+}
+
+.features-page .features-card-label {
+  position: relative;
+  z-index: 2;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 0.75rem;
+}
+
+.features-page .features-card-icon {
+  position: relative;
+  z-index: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(160deg, var(--card-glow-color), color-mix(in srgb, var(--card-glow-color) 60%, black));
+  margin-top: 0.5rem;
+}
+
+.features-page .features-card-title {
+  position: relative;
+  z-index: 2;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0.5rem 0 0;
+}
+
+.features-page .features-card-desc {
+  position: relative;
+  z-index: 2;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.features-page .features-card-media img.features-card-img--media {
+  inset: auto;
+  bottom: 0;
+  left: 0.75rem;
+  right: 0.75rem;
+  top: auto;
+  width: auto;
+  max-width: calc(100% - 1.5rem);
+  height: auto;
+  max-height: 90%;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: bottom;
   mix-blend-mode: normal;
 }
 

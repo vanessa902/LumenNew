@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
+import { ClipboardList } from 'lucide-react'
 import { SiteNavbar } from './SiteNavbar'
 import './FeaturesPage.css'
 
@@ -38,7 +39,9 @@ function TypewriterSegments({ lines }: { lines: string[] }) {
 
 const CARDS = [
   {
-    title: 'Install Tracker / CRM',
+    title: 'Taskboard',
+    label: 'Frame 2147225963',
+    description: 'Visual workflow management for every stage of the job.',
     img: '/LumenNew/scanifly/card1.png',
     color: '#2A85FF',
   },
@@ -120,10 +123,22 @@ export function FeaturesPage() {
                 <li key={i}>
                   <article style={{ '--card-glow-color': card.color } as React.CSSProperties}>
                     <span className="features-card-number">{i + 1}</span>
-                    <a href="#">{card.title}</a>
-                    <div>
-                      <div className="features-card-glow" />
-                      <img src={card.img} alt={card.title} className={i === 0 ? 'features-card-img--inset' : ''} />
+                    <div className="features-card-glow" />
+                    {card.label && <span className="features-card-label">{card.label}</span>}
+                    {card.label && (
+                      <div className="features-card-icon">
+                        <ClipboardList size={20} />
+                      </div>
+                    )}
+                    <h3 className="features-card-title">{card.title}</h3>
+                    {card.description && <p className="features-card-desc">{card.description}</p>}
+                    {!card.label && <a href="#">{card.title}</a>}
+                    <div className="features-card-media">
+                      <img
+                        src={card.img}
+                        alt={card.title}
+                        className={card.label ? 'features-card-img--media' : i === 0 ? 'features-card-img--inset' : ''}
+                      />
                     </div>
                   </article>
                 </li>
