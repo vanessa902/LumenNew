@@ -103,6 +103,11 @@
   width: 300px;
 }
 
+.features-page article {
+  background: #111;
+  border-radius: 0.5rem;
+}
+
 .features-page article > div {
   position: relative;
   flex: 1;
@@ -111,6 +116,24 @@
 .features-page article > div img {
   position: absolute;
   inset: 0;
+  mix-blend-mode: luminosity;
+}
+
+.features-page .features-card-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 100% 55% at 50% 0%, rgba(20, 184, 166, 0.65) 0%, rgba(20, 184, 166, 0.25) 35%, rgba(10, 10, 10, 0) 70%);
+}
+
+.features-page .features-card-number {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .features-page ul {

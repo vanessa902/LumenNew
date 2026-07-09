@@ -113,8 +113,10 @@ export function FeaturesPage() {
               {CARDS.map((card, i) => (
                 <li key={i}>
                   <article>
+                    <span className="features-card-number">{i + 1}</span>
                     <a href="#">{card.title}</a>
                     <div>
+                      <div className="features-card-glow" />
                       <img src={card.img} alt={card.title} />
                     </div>
                   </article>
