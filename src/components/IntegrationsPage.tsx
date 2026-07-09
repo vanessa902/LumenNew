@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { SiteNavbar } from './SiteNavbar'
 import { PrismaAbout } from './PrismaAbout'
+import { IntegrationsToolsSection } from './IntegrationsToolsSection'
 import './IntegrationsPage.css'
 
 const HEADING = 'Smart integrations simplify your workflow'
@@ -142,6 +143,8 @@ export function IntegrationsPage() {
           { text: ' Seamless Syncing', className: 'font-medium text-primary' },
         ]}
       />
+
+      <IntegrationsToolsSection />
     </div>
   )
 }

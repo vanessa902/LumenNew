@@ -20,30 +20,41 @@ function TypewriterSegments({ segments }: { segments: Segment[] }) {
 
   // Build rendered chars with correct className per segment
   let rendered: { char: string; className: string }[] = []
-  let pos = 0
   for (const seg of segments) {
     for (const char of seg.text) {
       rendered.push({ char, className: seg.className })
-      pos++
     }
   }
 
+  const shown = rendered.slice(0, count)
   const done = count >= full.length
 
+  // Split into lines on explicit '\n' markers
+  const lines: { char: string; className: string }[][] = [[]]
+  for (const item of shown) {
+    if (item.char === '\n') {
+      lines.push([])
+    } else {
+      lines[lines.length - 1].push(item)
+    }
+  }
+
+  const isMultiLine = lines.length > 1
+
   return (
-    <div ref={ref} className="inline-flex flex-wrap justify-center">
-      {rendered.slice(0, count).map((item, i) =>
-        item.char === '\n' ? (
-          <span key={i} className="basis-full h-0" />
-        ) : (
-          <span key={i} className={item.className} style={{ whiteSpace: 'pre' }}>
-            {item.char}
-          </span>
-        )
-      )}
-      {!done && (
-        <span className="inline-block w-[3px] self-center ml-1 animate-pulse" style={{ height: '0.7em', background: '#DEDBC8', borderRadius: 2 }} />
-      )}
+    <div ref={ref} className="flex flex-col items-center">
+      {lines.map((line, li) => (
+        <div key={li} className={`flex justify-center ${isMultiLine ? 'flex-nowrap' : 'flex-wrap'}`}>
+          {line.map((item, i) => (
+            <span key={i} className={item.className} style={{ whiteSpace: 'pre' }}>
+              {item.char}
+            </span>
+          ))}
+          {!done && li === lines.length - 1 && (
+            <span className="inline-block w-[3px] self-center ml-1 animate-pulse" style={{ height: '0.7em', background: '#DEDBC8', borderRadius: 2 }} />
+          )}
+        </div>
+      ))}
     </div>
   )
 }
