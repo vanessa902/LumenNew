@@ -279,7 +279,12 @@
   overflow: hidden;
   opacity: 0;
   box-sizing: border-box;
-  animation: mkt-avatar-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-name: mkt-avatar-in, mkt-avatar-wave-right;
+  animation-duration: 0.7s, var(--avatar-wave-duration, 8s);
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1), linear;
+  animation-fill-mode: both, none;
+  animation-iteration-count: 1, infinite;
+  animation-play-state: running, paused;
 }
 
 .integrations-page .mkt-avatar img {
@@ -335,6 +340,33 @@
     opacity: 1;
     filter: blur(0);
   }
+}
+
+@keyframes mkt-avatar-wave-left {
+  from {
+    transform: translate(-50%, -50%) rotate(var(--avatar-angle)) translate(var(--avatar-radius)) rotate(calc(-1 * var(--avatar-angle)));
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(calc(var(--avatar-angle) - 360deg)) translate(var(--avatar-radius)) rotate(calc(-1 * (var(--avatar-angle) - 360deg)));
+  }
+}
+
+@keyframes mkt-avatar-wave-right {
+  from {
+    transform: translate(-50%, -50%) rotate(var(--avatar-angle)) translate(var(--avatar-radius)) rotate(calc(-1 * var(--avatar-angle)));
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(calc(var(--avatar-angle) + 360deg)) translate(var(--avatar-radius)) rotate(calc(-1 * (var(--avatar-angle) + 360deg)));
+  }
+}
+
+.integrations-page .mkt-avatar--wave-left {
+  animation-name: mkt-avatar-in, mkt-avatar-wave-left;
+}
+
+.integrations-page .mkt-hero-right:hover .mkt-avatar--wave-left,
+.integrations-page .mkt-hero-right:hover .mkt-avatar--wave-right {
+  animation-play-state: running, running;
 }
 
 .integrations-page .mkt-ticker {

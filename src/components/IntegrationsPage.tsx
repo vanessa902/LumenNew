@@ -49,6 +49,13 @@ const AVATARS = [
   { url: '/LumenNew/scanifly/logo-6.png', orbit: 4, angle: 95, radius: 399, size: 88, shape: 'logo', glow: 'orange', delay: 1.9 },
 ]
 
+const ORBIT_WAVE: Record<number, { dir: 'left' | 'right'; duration: number }> = {
+  1: { dir: 'left', duration: 6 },
+  2: { dir: 'right', duration: 8 },
+  3: { dir: 'right', duration: 10 },
+  4: { dir: 'left', duration: 12 },
+}
+
 const LOGOS = [
   'https://polo-pecan-73837341.figma.site/_assets/v11/1e7b0e6fcc016cd28aec5c68990118b8c54c35a5.svg',
   'https://polo-pecan-73837341.figma.site/_assets/v11/3eac03c183db2ae080d910159211c14843398b61.svg',
@@ -102,20 +109,29 @@ export function IntegrationsPage() {
                 <img src="/LumenNew/icon-mark.svg" alt="Logo" className="mkt-center-logo" />
               </div>
 
-              {AVATARS.map((a, i) => (
-                <div
-                  key={i}
-                  className={`mkt-avatar mkt-avatar--${a.shape} mkt-avatar--glow-${a.glow}`}
-                  style={{
-                    width: a.size,
-                    height: a.size,
-                    animationDelay: `${a.delay}s`,
-                    transform: `translate(-50%, -50%) rotate(${a.angle}deg) translate(${a.radius}px) rotate(${-a.angle}deg)`,
-                  }}
-                >
-                  <img src={a.url} alt="" />
-                </div>
-              ))}
+              {AVATARS.map((a, i) => {
+                const wave = ORBIT_WAVE[a.orbit]
+                const waveDelay = -(a.angle / 360) * wave.duration
+                return (
+                  <div
+                    key={i}
+                    className={`mkt-avatar mkt-avatar--${a.shape} mkt-avatar--glow-${a.glow} mkt-avatar--wave-${wave.dir}`}
+                    style={
+                      {
+                        width: a.size,
+                        height: a.size,
+                        animationDelay: `${a.delay}s, ${waveDelay}s`,
+                        '--avatar-angle': `${a.angle}deg`,
+                        '--avatar-radius': `${a.radius}px`,
+                        '--avatar-wave-duration': `${wave.duration}s`,
+                        transform: `translate(-50%, -50%) rotate(${a.angle}deg) translate(${a.radius}px) rotate(${-a.angle}deg)`,
+                      } as React.CSSProperties
+                    }
+                  >
+                    <img src={a.url} alt="" />
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
