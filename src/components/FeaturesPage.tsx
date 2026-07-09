@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
-import { ClipboardList } from 'lucide-react'
+import { ClipboardList, CalendarDays } from 'lucide-react'
 import { SiteNavbar } from './SiteNavbar'
 import './FeaturesPage.css'
 
@@ -44,11 +44,15 @@ const CARDS = [
     img: '/LumenNew/scanifly/card1.png',
     color: '#2A85FF',
     hasIcon: true,
+    Icon: ClipboardList,
   },
   {
-    title: 'Smart Critiques',
-    img: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171741_ed9845ab-f5b2-4018-8ce7-07cc01823522.png&w=1280&q=85',
+    title: 'Install Calendar',
+    description: 'Schedule and track every install phase from one view.',
+    img: '/LumenNew/scanifly/card2.png',
     color: '#14B8A6',
+    hasIcon: true,
+    Icon: CalendarDays,
   },
   {
     title: 'Immersion Capsule',
@@ -124,9 +128,9 @@ export function FeaturesPage() {
                   <article style={{ '--card-glow-color': card.color } as React.CSSProperties}>
                     {!card.hasIcon && <span className="features-card-number">{i + 1}</span>}
                     <div className="features-card-glow" />
-                    {card.hasIcon && (
+                    {card.hasIcon && card.Icon && (
                       <div className="features-card-icon">
-                        <ClipboardList size={20} />
+                        <card.Icon size={20} />
                       </div>
                     )}
                     <h3 className="features-card-title">{card.title}</h3>
