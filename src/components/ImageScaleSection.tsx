@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const IMAGE_URL = '/LumenNew/astronaut.jpg'
+const OVERLAY_URL = '/LumenNew/overlay.png'
 
 export function ImageScaleSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -16,6 +17,7 @@ export function ImageScaleSection() {
   const boxTwoRef = useRef<HTMLDivElement>(null)
   const boxThreeRef = useRef<HTMLDivElement>(null)
   const boxFourRef = useRef<HTMLDivElement>(null)
+  const overlayRef = useRef<HTMLImageElement>(null)
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -50,6 +52,7 @@ export function ImageScaleSection() {
         .to(boxTwoRef.current, { scaleX: 1, duration: 10 }, 40)
         .to(boxThreeRef.current, { scaleY: 0.7, duration: 10 }, 50)
         .to(boxFourRef.current, { scaleX: 1, duration: 10 }, 60)
+        .to(overlayRef.current, { opacity: 1, duration: 10 }, 95)
     }, sectionRef)
 
     return () => ctx.revert()
@@ -68,6 +71,14 @@ export function ImageScaleSection() {
         <div ref={boxTwoRef} className="box box--two absolute z-[3] bg-black border-l border-white/10 top-1/2 left-3/4 w-1/4 h-1/2 origin-right" style={{ transform: 'scaleX(0)' }} />
         <div ref={boxThreeRef} className="box box--three absolute z-[3] bg-black top-1/2 left-1/2 w-1/4 h-1/2 origin-bottom" style={{ transform: 'scaleY(0)' }} />
         <div ref={boxFourRef} className="box box--four absolute z-[3] bg-black top-1/2 left-1/2 w-[12.5%] h-1/4 origin-left" style={{ transform: 'scaleX(0)' }} />
+
+        <img
+          ref={overlayRef}
+          src={OVERLAY_URL}
+          alt=""
+          className="absolute z-[4] top-1/2 left-[62.5%] w-[12.5%] h-1/4 object-contain"
+          style={{ opacity: 0 }}
+        />
 
         <div className="image-scale__left relative z-[4] grid content-center h-full w-1/2 pr-12">
           <span className="text-primary text-2xl md:text-3xl mb-6 block">Built for scale.</span>
