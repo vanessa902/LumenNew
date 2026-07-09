@@ -47,7 +47,7 @@ const AVATARS = [
   { url: '/LumenNew/scanifly/logo-4.png', orbit: 3, angle: 130, radius: 325, size: 88, shape: 'logo', glow: 'pink', delay: 1.5 },
   { url: '/LumenNew/scanifly/logo-5.png', orbit: 4, angle: 30, radius: 399, size: 58, shape: 'logo', glow: 'purple', delay: 1.7 },
   { url: '/LumenNew/scanifly/logo-6.png', orbit: 4, angle: 95, radius: 399, size: 88, shape: 'logo', glow: 'orange', delay: 1.9 },
-  { url: '/LumenNew/scanifly/logo-1.png', orbit: 4, angle: 220, radius: 399, size: 88, shape: 'logo', glow: 'pink', delay: 2.1 },
+  { url: '/LumenNew/scanifly/logo-3b.png', orbit: 4, angle: 220, radius: 399, size: 88, shape: 'logo', glow: 'pink', delay: 2.1 },
   { url: '/LumenNew/scanifly/logo-2.png', orbit: 4, angle: 320, radius: 399, size: 58, shape: 'logo', glow: 'purple', delay: 2.3 },
 ]
 
