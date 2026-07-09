@@ -214,6 +214,30 @@
   animation: mkt-spin-left 60s linear infinite;
 }
 
+.integrations-page .mkt-orbit {
+  transition: animation-duration 0.4s ease;
+}
+
+.integrations-page .mkt-hero-right:hover .mkt-orbit-1 {
+  animation-duration: 6s;
+}
+
+.integrations-page .mkt-hero-right:hover .mkt-orbit-2 {
+  animation-duration: 8s;
+}
+
+.integrations-page .mkt-hero-right:hover .mkt-orbit-3 {
+  animation-duration: 10s;
+}
+
+.integrations-page .mkt-hero-right:hover .mkt-orbit-4 {
+  animation-duration: 12s;
+}
+
+.integrations-page .mkt-hero-right:hover .mkt-orbit-center {
+  animation-duration: 6s;
+}
+
 @keyframes mkt-spin-left {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
