@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
-import { ClipboardList, CalendarDays, DollarSign, MonitorPlay } from 'lucide-react'
+import { ClipboardList, CalendarDays, DollarSign, MonitorPlay, Zap } from 'lucide-react'
 import { SiteNavbar } from './SiteNavbar'
 import './FeaturesPage.css'
 
@@ -39,10 +39,18 @@ function TypewriterSegments({ lines }: { lines: string[] }) {
 
 const CARDS = [
   {
+    title: 'Install Tracker/ CRM',
+    description: 'Track leads, manage customer pipelines, store documents, and automate follow-ups across your entire team.',
+    img: '/LumenNew/scanifly/card0.png',
+    color: '#2A85FF',
+    hasIcon: true,
+    Icon: Zap,
+  },
+  {
     title: 'Taskboard',
     description: 'Visual workflow management for every stage of the job.',
     img: '/LumenNew/scanifly/card1.png',
-    color: '#2A85FF',
+    color: '#14B8A6',
     hasIcon: true,
     Icon: ClipboardList,
   },
@@ -50,7 +58,7 @@ const CARDS = [
     title: 'Install Calendar',
     description: 'Schedule and track every install phase from one view.',
     img: '/LumenNew/scanifly/card2.png',
-    color: '#14B8A6',
+    color: '#FF383C',
     hasIcon: true,
     Icon: CalendarDays,
   },
@@ -58,7 +66,7 @@ const CARDS = [
     title: 'Commission Tracker',
     description: 'Automatic payout calculation for setters, closers, managers.',
     img: '/LumenNew/scanifly/card3.png',
-    color: '#FF383C',
+    color: '#CB30E0',
     hasIcon: true,
     Icon: DollarSign,
   },
@@ -66,18 +74,13 @@ const CARDS = [
     title: 'Proposal Presentations',
     description: 'Build and export standalone battery or solar proposals tailored for high-usage or outage-prone customers.',
     img: '/LumenNew/scanifly/card4.png',
-    color: '#CB30E0',
+    color: '#AC7F5E',
     hasIcon: true,
     Icon: MonitorPlay,
   },
   {
     title: 'Asset Library',
     img: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171741_ed9845ab-f5b2-4018-8ce7-07cc01823522.png&w=1280&q=85',
-    color: '#CB30E0',
-  },
-  {
-    title: 'Team Collab',
-    img: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260405_171809_f56666dc-c099-4778-ad82-9ad4f209567b.png&w=1280&q=85',
     color: '#AC7F5E',
   },
 ]
