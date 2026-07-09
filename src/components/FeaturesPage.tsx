@@ -1,6 +1,29 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useInView } from 'framer-motion'
 import { SiteNavbar } from './SiteNavbar'
 import './FeaturesPage.css'
+
+function TypewriterSegments({ text }: { text: string }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: true })
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (!inView) return
+    if (count >= text.length) return
+    const t = setTimeout(() => setCount(c => c + 1), 55)
+    return () => clearTimeout(t)
+  }, [inView, count, text.length])
+
+  const done = count >= text.length
+
+  return (
+    <div ref={ref} className="features-typewriter">
+      {text.slice(0, count)}
+      {!done && <span className="features-typewriter-cursor" />}
+    </div>
+  )
+}
 
 const CARDS = [
   {
@@ -67,6 +90,10 @@ export function FeaturesPage() {
       <section className="h-screen p-4 md:p-6 relative" style={{ background: '#000' }}>
         <SiteNavbar />
         <div className="container">
+          <div className="features-heading">
+            <span className="features-heading-label">Visual arts</span>
+            <TypewriterSegments text="The all-in-one operating system for contractors and service businesses." />
+          </div>
           <header>
             <h1>Features</h1>
             <p>Every tool contractors and service businesses need, in one connected platform.</p>

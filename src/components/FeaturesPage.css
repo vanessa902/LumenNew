@@ -36,6 +36,47 @@
   }
 }
 
+.features-page .features-heading {
+  text-align: center;
+  padding: 3rem 1.5rem 0;
+}
+
+.features-page .features-heading-label {
+  color: #E1E0CC;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: block;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.features-page .features-typewriter {
+  font-weight: 500;
+  color: #E1E0CC;
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  max-width: 56rem;
+  margin: 0 auto;
+  line-height: 0.95;
+}
+
+.features-page .features-typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.7em;
+  background: #DEDBC8;
+  margin-left: 4px;
+  vertical-align: middle;
+  border-radius: 2px;
+  animation: features-blink 0.9s step-end infinite;
+}
+
+@keyframes features-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 .features-page .container {
   min-height: 100%;
   display: flex;
