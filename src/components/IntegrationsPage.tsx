@@ -67,8 +67,7 @@ export function IntegrationsPage() {
       <div
         className="mkt-app"
         style={{
-          background:
-            "url('https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260624_111401_56af5012-2263-45d3-849a-8688084d7c2a.png&w=1280&q=85') center center / cover no-repeat",
+          background: "url('/LumenNew/integrations-bg.jpg') center center / cover no-repeat",
         }}
       >
         <SiteNavbar />
