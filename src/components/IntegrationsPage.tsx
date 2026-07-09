@@ -154,7 +154,7 @@ export function IntegrationsPage() {
         </button>
       </section>
 
-      <PrismaAbout />
+      <PrismaAbout label="Explore integrations" />
     </div>
   )
 }
