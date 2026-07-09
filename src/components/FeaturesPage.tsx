@@ -3,24 +3,35 @@ import { useInView } from 'framer-motion'
 import { SiteNavbar } from './SiteNavbar'
 import './FeaturesPage.css'
 
-function TypewriterSegments({ text }: { text: string }) {
+function TypewriterSegments({ lines }: { lines: string[] }) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true })
   const [count, setCount] = useState(0)
+  const full = lines.join('')
 
   useEffect(() => {
     if (!inView) return
-    if (count >= text.length) return
+    if (count >= full.length) return
     const t = setTimeout(() => setCount(c => c + 1), 55)
     return () => clearTimeout(t)
-  }, [inView, count, text.length])
+  }, [inView, count, full.length])
 
-  const done = count >= text.length
+  const done = count >= full.length
 
+  let remaining = count
   return (
     <div ref={ref} className="features-typewriter">
-      {text.slice(0, count)}
-      {!done && <span className="features-typewriter-cursor" />}
+      {lines.map((line, i) => {
+        const shown = line.slice(0, Math.max(0, remaining))
+        remaining -= line.length
+        const isLast = i === lines.length - 1
+        return (
+          <div key={i} className="features-typewriter-line">
+            {shown}
+            {isLast && !done && <span className="features-typewriter-cursor" />}
+          </div>
+        )
+      })}
     </div>
   )
 }
@@ -92,7 +103,7 @@ export function FeaturesPage() {
         <div className="container">
           <div className="features-heading">
             <span className="features-heading-label">Visual arts</span>
-            <TypewriterSegments text="For the modern service companies" />
+            <TypewriterSegments lines={['For the modern', 'service companies']} />
           </div>
           <main>
             <ul ref={listRef} {...dragHandlers}>
