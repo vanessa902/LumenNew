@@ -32,11 +32,15 @@ function TypewriterSegments({ segments }: { segments: Segment[] }) {
 
   return (
     <div ref={ref} className="inline-flex flex-wrap justify-center">
-      {rendered.slice(0, count).map((item, i) => (
-        <span key={i} className={item.className} style={{ whiteSpace: 'pre' }}>
-          {item.char}
-        </span>
-      ))}
+      {rendered.slice(0, count).map((item, i) =>
+        item.char === '\n' ? (
+          <span key={i} className="basis-full h-0" />
+        ) : (
+          <span key={i} className={item.className} style={{ whiteSpace: 'pre' }}>
+            {item.char}
+          </span>
+        )
+      )}
       {!done && (
         <span className="inline-block w-[3px] self-center ml-1 animate-pulse" style={{ height: '0.7em', background: '#DEDBC8', borderRadius: 2 }} />
       )}
