@@ -98,10 +98,10 @@ export function IntegrationsPage() {
               <div className="mkt-orbit mkt-orbit-4" />
               <div className="mkt-orbit mkt-orbit-3" />
               <div className="mkt-orbit mkt-orbit-2" />
-              <div className="mkt-orbit mkt-orbit-1">
-                <div className="mkt-orbit-center">
-                  <img src="/LumenNew/icon-mark.svg" alt="Logo" className="mkt-center-logo" />
-                </div>
+              <div className="mkt-orbit mkt-orbit-1" />
+
+              <div className="mkt-orbit-center">
+                <img src="/LumenNew/icon-mark.svg" alt="Logo" className="mkt-center-logo" />
               </div>
 
               {AVATARS.map((a, i) => (

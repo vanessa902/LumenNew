@@ -234,10 +234,6 @@
   animation-duration: 12s;
 }
 
-.integrations-page .mkt-hero-right:hover .mkt-orbit-center {
-  animation-duration: 6s;
-}
-
 @keyframes mkt-spin-left {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -257,19 +253,23 @@
 }
 
 .integrations-page .mkt-orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: mkt-spin-right 30s linear infinite;
+  z-index: 5;
 }
 
 .integrations-page .mkt-center-logo {
-  width: 90px;
-  height: 90px;
+  width: 140px;
+  height: 140px;
   background: #fff;
   border-radius: 50%;
-  padding: 14px;
+  padding: 22px;
+  display: block;
 }
 
 .integrations-page .mkt-avatar {
