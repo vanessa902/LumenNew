@@ -1,3 +1,5 @@
+import { ParticlesSphereBackground } from './ParticlesSphereBackground'
+
 const TOOLS = [
   {
     name: 'Zapier',
@@ -37,16 +39,19 @@ export function IntegrationsToolsSection() {
         </p>
       </div>
 
-      <div className="integrations-tools-grid">
-        {TOOLS.map((tool, i) => (
-          <div key={i} className="integrations-tool-card">
-            <div className="integrations-tool-icon" style={{ background: tool.bg }}>
-              <img src={tool.icon} alt={tool.name} />
+      <div className="integrations-tools-grid-wrap">
+        <ParticlesSphereBackground />
+        <div className="integrations-tools-grid">
+          {TOOLS.map((tool, i) => (
+            <div key={i} className="integrations-tool-card">
+              <div className="integrations-tool-icon" style={{ background: tool.bg }}>
+                <img src={tool.icon} alt={tool.name} />
+              </div>
+              <h3>{tool.name}</h3>
+              <p>{tool.description}</p>
             </div>
-            <h3>{tool.name}</h3>
-            <p>{tool.description}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )

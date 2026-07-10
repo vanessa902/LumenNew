@@ -602,7 +602,28 @@
   margin: 0;
 }
 
+.integrations-tools-grid-wrap {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.particles-sphere-bg {
+  position: absolute;
+  inset: -10% -10% -10% -10%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particles-sphere-bg canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
 .integrations-tools-grid {
+  position: relative;
+  z-index: 1;
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
