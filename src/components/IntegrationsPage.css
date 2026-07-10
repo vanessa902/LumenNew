@@ -724,3 +724,20 @@
 .features-page .integrations-feature-ul li {
   flex: 0 0 auto;
 }
+
+.features-page .integrations-feature-ul li article {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.features-page .integrations-feature-ul li article:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.6);
+}
+
+.features-page .integrations-feature-ul li article .features-card-icon {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.features-page .integrations-feature-ul li article:hover .features-card-icon {
+  transform: scale(1.12) rotate(-4deg);
+}
