@@ -712,6 +712,13 @@
   margin: 0;
 }
 
+.integrations-feature-subtext {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
 .features-page .integrations-feature-ul {
   justify-content: center;
   padding-inline: 0;

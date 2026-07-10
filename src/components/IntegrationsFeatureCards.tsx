@@ -64,11 +64,18 @@ export function IntegrationsFeatureCards() {
       <section className="p-4 md:p-6 relative" style={{ background: '#000', height: '80vh' }}>
         <div className="container">
           <div className="features-heading">
-            <span className="features-heading-label">Built for your team</span>
-            <div className="features-typewriter" style={{ fontSize: 'clamp(1.75rem, 4.5vw, 3.5rem)' }}>
-              <div className="features-typewriter-line">More tools,</div>
-              <div className="features-typewriter-line">one platform</div>
+            <div className="features-typewriter" style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)' }}>
+              <div className="features-typewriter-line">Don't see your tech stack?</div>
+              <div className="features-typewriter-line">Let's build it.</div>
             </div>
+            <span className="features-heading-label" style={{ marginTop: '1.5rem', marginBottom: 0 }}>
+              Built for your team
+            </span>
+            <p className="integrations-feature-subtext">
+              We are constantly expanding our library.
+              <br />
+              Tell us what is missing and we will help bring your workflow together.
+            </p>
           </div>
           <main>
             <ul ref={listRef} className="integrations-feature-ul" {...dragHandlers}>
