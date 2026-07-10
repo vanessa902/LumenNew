@@ -318,7 +318,7 @@ function InstallTrackerMockup() {
               {TRACKER_COLUMNS.map(col => (
                 <div
                   key={col.name}
-                  className="bg-slate-50/60 rounded-xl p-2.5 min-h-[160px] max-h-[280px] overflow-y-auto transition-colors hover:bg-slate-100/70"
+                  className="tracker-scroll bg-slate-50/60 rounded-xl p-2.5 min-h-[160px] max-h-[280px] overflow-y-auto transition-colors hover:bg-slate-100/70"
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: col.dot }} />
@@ -530,8 +530,8 @@ function Pricing() {
 
       <div className="c3-watermark-container">
         <div className="c3-watermark-main">
-          <span className="c3-watermark-line-1">Your email.</span>
-          <span className="c3-watermark-line-2">Revitalized</span>
+          <span className="c3-watermark-line-1">Track, sell and grow</span>
+          <span className="c3-watermark-line-2">your business with Lumentrack</span>
         </div>
       </div>
 
