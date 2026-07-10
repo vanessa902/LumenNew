@@ -1,18 +1,10 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { ChevronRight, Menu } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
+import { SiteNavbar } from './SiteNavbar'
 import './AuraContactPage.css'
 
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064122_c4750c0e-7476-4b44-94a2-a85a65c63bf2.mp4'
-
-function LogoMark({ className = 'w-8 h-8' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 256 256" fill="#fff" className={className}>
-      <path d="M 0 128 C 70.692 128 128 185.308 128 256 L 64 256 C 64 220.654 35.346 192 0 192 Z M 256 192 C 220.654 192 192 220.654 192 256 L 128 256 C 128 185.308 185.308 128 256 128 Z M 128 0 C 128 70.692 70.692 128 0 128 L 0 64 C 35.346 64 64 35.346 64 0 Z M 192 0 C 192 35.346 220.654 64 256 64 L 256 128 C 185.308 128 128 70.692 128 0 Z" />
-    </svg>
-  )
-}
 
 function SectionEyebrow({ label, tag }: { label: string; tag?: string }) {
   return (
@@ -24,42 +16,11 @@ function SectionEyebrow({ label, tag }: { label: string; tag?: string }) {
   )
 }
 
-function Navbar() {
-  const links = ['Solutions', 'Pricing', 'Blog', 'Documentation', 'Careers']
-  return (
-    <motion.nav
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="relative z-10 max-w-6xl mx-auto px-6 py-6 flex items-center justify-between"
-    >
-      <LogoMark className="w-8 h-8" />
-      <div className="hidden md:flex gap-8">
-        {links.map((link, i) => (
-          <motion.a
-            key={link}
-            href="#"
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 + i * 0.05 }}
-            className="text-white/70 text-sm font-medium hover:text-white"
-          >
-            {link}
-          </motion.a>
-        ))}
-      </div>
-      <button className="md:hidden w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
-        <Menu className="w-4 h-4 text-white/80" />
-      </button>
-    </motion.nav>
-  )
-}
-
 function ContactForm() {
   const [sent, setSent] = useState(false)
 
   return (
-    <section className="relative z-10 max-w-6xl mx-auto px-6 pt-10 pb-28 md:pt-16 md:pb-36">
+    <section className="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-28 md:pt-36 md:pb-36">
       <div className="max-w-xl mx-auto text-center mb-10">
         <SectionEyebrow label="Contact" tag="We reply fast" />
         <h2 className="mt-5 text-3xl md:text-5xl font-semibold tracking-tight leading-[1.02]">Get in touch</h2>
@@ -136,7 +97,7 @@ export function AuraContactPage() {
       <div className="hidden md:block pointer-events-none fixed inset-y-0 left-1/2 -translate-x-[calc(50%+36rem)] w-px bg-white/10 z-[5]" />
       <div className="hidden md:block pointer-events-none fixed inset-y-0 left-1/2 translate-x-[calc(-50%+36rem)] w-px bg-white/10 z-[5]" />
 
-      <Navbar />
+      <SiteNavbar />
       <ContactForm />
     </div>
   )
