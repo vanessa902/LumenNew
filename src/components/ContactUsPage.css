@@ -89,8 +89,9 @@
   left: 0;
   overflow: hidden;
   z-index: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(42, 133, 255, 0.35), transparent 70%),
-    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(160, 104, 255, 0.3), transparent 70%),
-    #000;
+  background: #000;
+}
+
+.contact-us-page #canvas canvas {
+  display: block;
 }
