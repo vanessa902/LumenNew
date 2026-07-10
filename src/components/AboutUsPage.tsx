@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
   ChevronRight,
   Search,
-  Check,
   Home,
   MessageSquare,
   DollarSign,
@@ -468,104 +466,6 @@ function Testimonials() {
   )
 }
 
-const PLANS = [
-  {
-    tier: 'Free',
-    monthly: 'Free',
-    yearly: 'Free',
-    desc: 'For creators taking their first steps with Forma.',
-    features: [
-      'Up to 3 projects in the cloud',
-      'Image export up to 1080p',
-      'Basic editing tools',
-      'Free templates and icons',
-      'Access via web and mobile app',
-    ],
-    pro: false,
-  },
-  {
-    tier: 'Standard',
-    monthly: '$9,99/m',
-    yearly: '$99,99/y',
-    desc: 'For freelancers and small teams who need more freedom and flexibility.',
-    features: [
-      'Up to 50 projects in the cloud',
-      'Export up to 4K',
-      'Advanced editing toolkit',
-      'Team collaboration (up to 5 members)',
-      'Access to premium template library',
-    ],
-    pro: false,
-  },
-  {
-    tier: 'Pro',
-    monthly: '$19,99/m',
-    yearly: '$199,99/y',
-    desc: 'For studios, agencies, and professional creators working with brands.',
-    features: [
-      'Unlimited projects',
-      'Export up to 8K + animations',
-      'AI-powered content generation tools',
-      'Unlimited team members',
-      'Brand customization',
-    ],
-    pro: true,
-  },
-]
-
-function Pricing() {
-  const [yearly, setYearly] = useState(false)
-  return (
-    <section className="c3-pricing-section">
-      <svg width="0" height="0" style={{ position: 'absolute' }}>
-        <filter id="c3-noise">
-          <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves={2} stitchTiles="stitch" />
-          <feComponentTransfer>
-            <feFuncA type="linear" slope={0.075} />
-          </feComponentTransfer>
-          <feComposite in2="SourceGraphic" operator="in" result="noise" />
-          <feBlend in="SourceGraphic" in2="noise" mode="overlay" />
-        </filter>
-      </svg>
-
-      <div className="c3-watermark-container">
-        <div className="c3-watermark-main">
-          <span className="c3-watermark-line-1">Track, sell and grow</span>
-          <span className="c3-watermark-line-2">your business with Lumentrack</span>
-        </div>
-      </div>
-
-      <div className="c3-grid">
-        {PLANS.map(plan => (
-          <div key={plan.tier} className={`c3-card ${plan.pro ? 'c3-card-pro' : ''}`}>
-            <div className="c3-tier-small">{plan.tier}</div>
-            <div className="c3-tier-large">{yearly ? plan.yearly : plan.monthly}</div>
-            <div className="c3-desc">{plan.desc}</div>
-            <ul className="c3-list">
-              {plan.features.map(feature => (
-                <li key={feature}>
-                  <span className="c3-check">
-                    <Check className="w-3.5 h-3.5 text-white" />
-                  </span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <button className="c3-btn">Choose Plan</button>
-          </div>
-        ))}
-      </div>
-
-      <div className="c3-toggle-wrap">
-        <span className="text-sm text-white/70">Yearly</span>
-        <button className={`c3-toggle ${yearly ? 'active' : ''}`} onClick={() => setYearly(y => !y)}>
-          <span className="c3-toggle-knob" />
-        </button>
-      </div>
-    </section>
-  )
-}
-
 function FinalCTA() {
   return (
     <section className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-32">
@@ -632,7 +532,6 @@ export function AboutUsPage() {
       <FeatureTriage />
       <LogoCloud />
       <Testimonials />
-      <Pricing />
       <FinalCTA />
     </div>
   )
