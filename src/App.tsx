@@ -6,7 +6,7 @@ import { MarqueeBanner } from './components/MarqueeBanner'
 import { ImageScaleSection } from './components/ImageScaleSection'
 import { FeaturesPage } from './components/FeaturesPage'
 import { IntegrationsPage } from './components/IntegrationsPage'
-import { ContactUsPage } from './components/ContactUsPage'
+import { AuraContactPage } from './components/AuraContactPage'
 
 function Home() {
   return (
@@ -26,7 +26,7 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/features" element={<FeaturesPage />} />
       <Route path="/integrations" element={<IntegrationsPage />} />
-      <Route path="/contact" element={<ContactUsPage />} />
+      <Route path="/contact" element={<AuraContactPage />} />
     </Routes>
   )
 }
