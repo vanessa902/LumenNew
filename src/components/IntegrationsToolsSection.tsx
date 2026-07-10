@@ -18,22 +18,10 @@ const TOOLS = [
     description: 'Transform your data into a living ecosystem with real-time spreadsheet sync.',
   },
   {
-    name: 'Tesla',
-    icon: '/LumenNew/scanifly/logo-3.png',
-    bg: '#ffffff',
-    description: 'Connect Tesla Powerwall and energy data straight into your project pipeline.',
-  },
-  {
-    name: 'HubSpot',
-    icon: '/LumenNew/scanifly/logo-6.png',
-    bg: '#ffffff',
-    description: 'Keep your CRM and marketing pipeline in perfect sync, automatically.',
-  },
-  {
-    name: 'AI Assistant',
+    name: 'Aurora Solar',
     icon: '/LumenNew/scanifly/logo-2.png',
     bg: '#ffffff',
-    description: 'Let AI handle the busywork, from scheduling to smart follow-ups.',
+    description: 'Pull accurate solar designs and proposals straight from Aurora into your workflow.',
   },
 ]
 
