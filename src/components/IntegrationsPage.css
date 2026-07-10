@@ -586,7 +586,7 @@
 }
 
 .integrations-tools-header h2 {
-  font-family: 'Urbanist', sans-serif;
+  font-family: 'Haffer X Trial', 'Space Grotesk', system-ui, sans-serif;
   font-weight: 800;
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   color: #fff;
