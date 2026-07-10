@@ -5,7 +5,7 @@ const NAV_ITEMS: { label: string; href: string }[] = [
   { label: 'Features', href: '/features' },
   { label: 'Integrations', href: '/integrations' },
   { label: 'About', href: '/' },
-  { label: 'Contact Us', href: '/' },
+  { label: 'Contact Us', href: '/contact' },
 ]
 
 export function SiteNavbar() {
