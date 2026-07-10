@@ -40,8 +40,8 @@ export function ContactUsPage() {
         })
         document.body.addEventListener('click', onClick)
       })
-      .catch(() => {
-        // Cursor effect unavailable (e.g. offline), fail silently
+      .catch(err => {
+        console.error('TubesCursor failed to load', err)
       })
 
     return () => {
