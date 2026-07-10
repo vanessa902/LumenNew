@@ -7,6 +7,7 @@ import { ImageScaleSection } from './components/ImageScaleSection'
 import { FeaturesPage } from './components/FeaturesPage'
 import { IntegrationsPage } from './components/IntegrationsPage'
 import { AuraContactPage } from './components/AuraContactPage'
+import { AboutUsPage } from './components/AboutUsPage'
 
 function Home() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
       <Route path="/features" element={<FeaturesPage />} />
       <Route path="/integrations" element={<IntegrationsPage />} />
       <Route path="/contact" element={<AuraContactPage />} />
+      <Route path="/about" element={<AboutUsPage />} />
     </Routes>
   )
 }

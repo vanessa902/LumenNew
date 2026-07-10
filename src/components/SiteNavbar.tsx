@@ -4,7 +4,7 @@ const NAV_ITEMS: { label: string; href: string }[] = [
   { label: 'Home', href: '/' },
   { label: 'Features', href: '/features' },
   { label: 'Integrations', href: '/integrations' },
-  { label: 'About', href: '/' },
+  { label: 'About', href: '/about' },
   { label: 'Contact Us', href: '/contact' },
 ]
 
