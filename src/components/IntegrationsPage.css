@@ -594,12 +594,6 @@
   line-height: 1.15;
 }
 
-.integrations-tools-accent {
-  background: linear-gradient(90deg, #6f9dff, #2a85ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
 
 .integrations-tools-header p {
   color: rgba(255, 255, 255, 0.55);

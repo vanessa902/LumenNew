@@ -29,9 +29,7 @@ export function IntegrationsToolsSection() {
   return (
     <section className="integrations-tools-section">
       <div className="integrations-tools-header">
-        <h2>
-          All Your Tools, <span className="integrations-tools-accent">One Unified Platform</span>
-        </h2>
+        <h2>All your tools, one unified platform</h2>
         <p>
           Lumentrack brings together the best integrations to streamline your business. Whether it is automating
           emails, managing finances, or creating proposals with design tools, our platform ensures everything works
