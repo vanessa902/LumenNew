@@ -71,7 +71,7 @@ export function IntegrationsFeatureCards() {
             </div>
           </div>
           <main>
-            <ul ref={listRef} {...dragHandlers}>
+            <ul ref={listRef} className="integrations-feature-ul" {...dragHandlers}>
               {CARDS.map((card, i) => (
                 <li key={i}>
                   <article style={{ '--card-glow-color': card.color } as React.CSSProperties}>
