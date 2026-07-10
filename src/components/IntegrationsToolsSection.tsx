@@ -5,25 +5,27 @@ const TOOLS = [
     name: 'Zapier',
     icon: '/LumenNew/scanifly/logo-4.png',
     bg: '#FF4A00',
-    description: 'Build and scale AI workflows and agents across 9000+ apps with zero code.',
+    description:
+      'Build and scale AI workflows and agents across 9000+ apps with Zapier—the most connected AI orchestration platform. Trusted by 3 million+ businesses.',
   },
   {
     name: 'Enphase',
     icon: '/LumenNew/scanifly/logo-3b.png',
     bg: '#ffffff',
-    description: 'Sync system performance data directly from your Enphase monitoring platform.',
+    description: 'Integrate Enphase inverter monitoring directly for project-specific system insights.',
   },
   {
     name: 'Google Sheets',
     icon: '/LumenNew/scanifly/logo-1.png',
     bg: '#ffffff',
-    description: 'Transform your data into a living ecosystem with real-time spreadsheet sync.',
+    description:
+      'Transform your data into a living ecosystem with the Google Sheets integration, the ultimate bridge for automating workflows and centralizing information in real-time.',
   },
   {
     name: 'Aurora Solar',
     icon: '/LumenNew/scanifly/logo-2.png',
     bg: '#ffffff',
-    description: 'Pull accurate solar designs and proposals straight from Aurora into your workflow.',
+    description: 'Create a highly accurate solar design by using Aurora Solar.',
   },
 ]
 
