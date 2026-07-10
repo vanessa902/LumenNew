@@ -755,6 +755,8 @@
 
 .features-page .integrations-feature-ul {
   justify-content: center;
-  padding-inline: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: 2rem;
   overflow: visible;
 }
