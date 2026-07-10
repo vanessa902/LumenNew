@@ -574,9 +574,56 @@
 
 .integrations-tools-section {
   position: relative;
-  background: #050508;
-  background-image: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(42, 133, 255, 0.18), transparent 70%);
   padding: 6rem 2rem 7rem;
+  overflow: hidden;
+  background: #000;
+}
+
+.integrations-tools-section::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  background: linear-gradient(
+    120deg,
+    #000000 0%,
+    #0a1a3d 18%,
+    #00d4ff 36%,
+    #ffffff 50%,
+    #00d4ff 64%,
+    #0a1a3d 82%,
+    #000000 100%
+  );
+  background-size: 300% 300%;
+  animation: integrations-tools-gradient-move 18s ease-in-out infinite;
+  filter: blur(60px) saturate(140%);
+  opacity: 0.55;
+}
+
+.integrations-tools-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0, 0, 0, 0.6), transparent 70%);
+}
+
+@keyframes integrations-tools-gradient-move {
+  0% {
+    background-position: 0% 30%;
+  }
+  50% {
+    background-position: 100% 70%;
+  }
+  100% {
+    background-position: 0% 30%;
+  }
+}
+
+.integrations-tools-header,
+.integrations-tools-grid-wrap {
+  position: relative;
+  z-index: 1;
 }
 
 .integrations-tools-header {
@@ -606,19 +653,6 @@
   position: relative;
   max-width: 1400px;
   margin: 0 auto;
-}
-
-.particles-sphere-bg {
-  position: absolute;
-  inset: -25%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.particles-sphere-bg canvas {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
 }
 
 .integrations-tools-grid {

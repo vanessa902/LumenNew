@@ -1,5 +1,3 @@
-import { ParticlesSphereBackground } from './ParticlesSphereBackground'
-
 const TOOLS = [
   {
     name: 'Zapier',
@@ -42,7 +40,6 @@ export function IntegrationsToolsSection() {
       </div>
 
       <div className="integrations-tools-grid-wrap">
-        <ParticlesSphereBackground />
         <div className="integrations-tools-grid">
           {TOOLS.map((tool, i) => (
             <div key={i} className="integrations-tool-card">
