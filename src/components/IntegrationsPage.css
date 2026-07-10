@@ -610,7 +610,7 @@
 
 .particles-sphere-bg {
   position: absolute;
-  inset: -10% -10% -10% -10%;
+  inset: -25%;
   z-index: 0;
   pointer-events: none;
 }

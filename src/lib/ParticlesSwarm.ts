@@ -77,7 +77,7 @@ export class ParticlesSwarm {
       const target = this.target
       const color = this.pColor
 
-      const r = 30
+      const r = 55
       const phi = Math.acos(-1 + (2 * i) / count)
       const theta = Math.sqrt(count * Math.PI) * phi + time
       target.set(r * Math.cos(theta) * Math.sin(phi), r * Math.sin(theta) * Math.sin(phi), r * Math.cos(phi))
