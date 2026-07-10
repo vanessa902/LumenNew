@@ -79,9 +79,9 @@ function Hero() {
         transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="text-4xl md:text-7xl font-semibold tracking-tight leading-[0.9]"
       >
-        <div>Your email.</div>
+        <div>Track, sell and grow</div>
         <div className="aura-animate-shiny" style={gradientStyle}>
-          Revitalized
+          your business with Lumentrack
         </div>
       </motion.h1>
       <motion.p
