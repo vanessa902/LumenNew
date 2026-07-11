@@ -397,7 +397,7 @@ function Testimonials() {
       company: 'COHERE',
     },
     {
-      quote: 'Triage that actually understands context. Our team stopped dreading Monday morning inboxes.',
+      image: '/LumenNew/scanifly/testimonial-mockup.png',
       name: 'Mathies Christensen',
       role: 'Engineering Manager',
       company: 'LUNAR',
@@ -407,8 +407,12 @@ function Testimonials() {
     <section className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-28 border-t border-white/10">
       <div className="grid md:grid-cols-3 gap-6">
         {items.map(item => (
-          <figure key={item.name} className="aura-liquid-glass rounded-2xl p-6">
-            <blockquote className="text-sm text-white/80 leading-[1.6]">&ldquo;{item.quote}&rdquo;</blockquote>
+          <figure key={item.name} className="aura-liquid-glass rounded-2xl p-6 flex flex-col">
+            {item.image ? (
+              <img src={item.image} alt={item.name} className="w-full h-auto rounded-lg" />
+            ) : (
+              <blockquote className="text-sm text-white/80 leading-[1.6]">&ldquo;{item.quote}&rdquo;</blockquote>
+            )}
             <figcaption className="mt-6 pt-5 border-t border-white/10">
               <div className="text-sm font-semibold">{item.name}</div>
               <div className="text-xs text-white/50">{item.role}</div>
