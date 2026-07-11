@@ -398,9 +398,9 @@ function Testimonials() {
     },
     {
       image: '/LumenNew/scanifly/testimonial-mockup.png',
-      name: 'Mathies Christensen',
-      role: 'Engineering Manager',
-      company: 'LUNAR',
+      name: 'Boost your Sales',
+      role: 'Personalize your Workspace',
+      company: 'Improve Logistics',
     },
   ]
   return (
@@ -413,11 +413,19 @@ function Testimonials() {
             ) : (
               <blockquote className="text-sm text-white/80 leading-[1.6]">&ldquo;{item.quote}&rdquo;</blockquote>
             )}
-            <figcaption className="mt-6 pt-5 border-t border-white/10">
-              <div className="text-sm font-semibold">{item.name}</div>
-              <div className="text-xs text-white/50">{item.role}</div>
-              <div className="text-xs text-white font-semibold tracking-wide uppercase">{item.company}</div>
-            </figcaption>
+            {item.image ? (
+              <figcaption className="mt-6 pt-5 border-t border-white/10 space-y-1">
+                <div className="text-sm font-bold text-white">{item.name}</div>
+                <div className="text-sm font-bold text-white">{item.role}</div>
+                <div className="text-sm font-bold text-white">{item.company}</div>
+              </figcaption>
+            ) : (
+              <figcaption className="mt-6 pt-5 border-t border-white/10">
+                <div className="text-sm font-semibold">{item.name}</div>
+                <div className="text-xs text-white/50">{item.role}</div>
+                <div className="text-xs text-white font-semibold tracking-wide uppercase">{item.company}</div>
+              </figcaption>
+            )}
           </figure>
         ))}
       </div>
