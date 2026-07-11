@@ -1,3 +1,4 @@
+import { Suspense, lazy } from 'react'
 import { motion } from 'framer-motion'
 import {
   ChevronRight,
@@ -25,6 +26,8 @@ import {
 } from 'lucide-react'
 import { SiteNavbar } from './SiteNavbar'
 import './AboutUsPage.css'
+
+const Spline = lazy(() => import('@splinetool/react-spline'))
 
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064122_c4750c0e-7476-4b44-94a2-a85a65c63bf2.mp4'
@@ -441,32 +444,11 @@ function FinalCTA() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="aura-liquid-glass relative overflow-hidden rounded-3xl px-8 py-16 md:py-24 text-center"
+        className="aura-liquid-glass relative overflow-hidden rounded-3xl h-[500px] md:h-[600px]"
       >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'radial-gradient(600px circle at 50% 0%, rgba(255,255,255,0.15), transparent 70%)',
-            opacity: 0.3,
-          }}
-        />
-        <div className="relative">
-          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.02]">
-            Close the tabs.
-            <br />
-            Open your day.
-          </h2>
-          <p className="mt-6 text-white/60 max-w-md mx-auto text-sm leading-[1.6]">
-            Join thousands of builders, founders, and operators who treat email like a tool — not an obligation.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <AppleButton label="Download Aura" />
-            <button className="rounded-full border border-white/15 text-white text-sm font-medium px-5 py-3 hover:bg-white/5 inline-flex items-center gap-2">
-              Talk to sales
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
+        <Suspense fallback={null}>
+          <Spline scene="https://prod.spline.design/9t3iimkfpXQv7SCA/scene.splinecode" className="w-full h-full" />
+        </Suspense>
       </motion.div>
     </section>
   )
