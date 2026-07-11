@@ -438,16 +438,16 @@ function Testimonials() {
 
 function FinalCTA() {
   return (
-    <section className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-32">
+    <section className="relative z-10 w-full">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="aura-liquid-glass relative overflow-hidden rounded-3xl h-[500px] md:h-[600px]"
+        className="relative overflow-hidden w-full h-screen"
       >
         <Suspense fallback={null}>
-          <Spline scene="https://prod.spline.design/9t3iimkfpXQv7SCA/scene.splinecode" className="w-full h-full" />
+          <Spline scene="https://prod.spline.design/9t3iimkfpXQv7SCA/scene.splinecode" className="absolute inset-0 w-full h-full" />
         </Suspense>
       </motion.div>
     </section>
