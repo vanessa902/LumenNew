@@ -147,7 +147,7 @@ export function FeaturesPage() {
         <SiteNavbar />
         <div className="container">
           <div className="features-heading">
-            <span className="features-heading-label">Visual arts</span>
+            <span className="features-heading-label">FEATURES</span>
             <TypewriterSegments lines={['For the modern', 'service companies']} />
           </div>
           <main>
