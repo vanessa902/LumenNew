@@ -80,15 +80,15 @@ export function PrismaAbout({
   gradientHover?: boolean
 }) {
   return (
-    <section className="bg-black py-20 px-4 md:px-8">
-      <div className="bg-[#101010] max-w-6xl mx-auto rounded-2xl p-8 md:p-16 text-center">
+    <section className="bg-[#0a0a0a] py-20 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto rounded-2xl p-8 md:p-16 text-center">
         <div
           className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-4xl mx-auto leading-[0.95] sm:leading-[0.9] ${gradientHover ? 'prisma-gradient-hover-wrap' : ''}`}
         >
           <TypewriterSegments segments={segments} />
         </div>
+        <AboutCarousel />
       </div>
-      <AboutCarousel />
     </section>
   )
 }

@@ -29,26 +29,24 @@ const CARDS = [
 export function AboutCarousel() {
   return (
     <div className="preview-carousel">
-      <div className="section">
-        <ul className="cards">
-          {CARDS.map((card, i) => (
-            <li key={i} className="card">
-              <div className="visual">
-                <img src={card.img} alt={card.title} className="img" />
+      <ul className="cards">
+        {CARDS.map((card, i) => (
+          <li key={i} className="card">
+            <div className="visual">
+              <img src={card.img} alt={card.title} className="img" />
+            </div>
+            <div className="content">
+              <div className="content-wrapper">
+                <h3 className="title">{card.title}</h3>
+                <p className="desc">{card.desc}</p>
               </div>
-              <div className="content">
-                <div className="content-wrapper">
-                  <h3 className="title">{card.title}</h3>
-                  <p className="desc">{card.desc}</p>
-                </div>
-                <a href="#" className="card-link">
-                  Learn more
-                </a>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+              <a href="#" className="card-link">
+                Learn more
+              </a>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

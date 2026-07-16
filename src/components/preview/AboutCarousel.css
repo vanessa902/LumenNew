@@ -19,9 +19,9 @@
     --threshold: 0.625;
     --contrast-fn: min(max(((l - var(--threshold)) * -infinity), 0), 1);
 
-    --ui-surface: var(--hdr-purple-15);
-    --ui-surface-container: var(--hdr-purple-14);
-    --ui-on-surface: oklch(from var(--ui-surface) var(--contrast-fn) 0 h);
+    --ui-surface: #1c1c1c;
+    --ui-surface-container: #0a0a0a;
+    --ui-on-surface: #f2f2f2;
     --ui-primary: var(--hdr-orange-2);
 
     --ui-spacing-none: 0;
@@ -57,15 +57,8 @@
 }
 
 @layer preview-carousel-layout {
-  .preview-carousel .section {
+  .preview-carousel {
     container-type: inline-size;
-    background: var(--ui-surface-container);
-    inline-size: 100%;
-    display: grid;
-    place-items: center;
-    column-gap: var(--ui-spacing-xs);
-    row-gap: var(--ui-spacing-lg);
-    padding-block: var(--ui-spacing-xxl);
   }
 
   .preview-carousel .cards {
