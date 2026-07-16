@@ -8,6 +8,7 @@ import { FeaturesPage } from './components/FeaturesPage'
 import { IntegrationsPage } from './components/IntegrationsPage'
 import { AuraContactPage } from './components/AuraContactPage'
 import { AboutUsPage } from './components/AboutUsPage'
+import { PreviewHome } from './components/PreviewHome'
 
 function Home() {
   return (
@@ -25,7 +26,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/preview" element={<Home />} />
+      <Route path="/preview" element={<PreviewHome />} />
       <Route path="/features" element={<FeaturesPage />} />
       <Route path="/integrations" element={<IntegrationsPage />} />
       <Route path="/contact" element={<AuraContactPage />} />
