@@ -84,7 +84,7 @@ export function PrismaHero() {
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Join the lab
+            Book a Demo
             <span className="bg-black rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center group-hover:scale-110 transition-transform">
               <ArrowRight className="text-primary w-4 h-4" />
             </span>
