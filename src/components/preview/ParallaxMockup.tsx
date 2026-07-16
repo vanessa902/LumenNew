@@ -64,11 +64,11 @@ export function ParallaxMockup() {
           src={DASHBOARD}
           alt="Dashboard"
           draggable={false}
-          className="block w-full"
+          className="block w-full rounded-t-2xl md:rounded-t-[1.5rem] overflow-hidden"
         />
         {/* Glass reflection overlay */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none rounded-t-2xl md:rounded-t-[1.5rem] overflow-hidden"
           style={{
             WebkitMaskImage: `url(${DASHBOARD})`,
             maskImage:        `url(${DASHBOARD})`,
