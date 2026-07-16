@@ -25,6 +25,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/preview" element={<Home />} />
       <Route path="/features" element={<FeaturesPage />} />
       <Route path="/integrations" element={<IntegrationsPage />} />
       <Route path="/contact" element={<AuraContactPage />} />
