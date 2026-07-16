@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { ParallaxMockup } from '../ParallaxMockup'
+import { ParallaxMockup } from './ParallaxMockup'
 import { SiteNavbar } from '../SiteNavbar'
 
 function TypeWriter({ text }: { text: string }) {
