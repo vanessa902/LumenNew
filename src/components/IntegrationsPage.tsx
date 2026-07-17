@@ -85,12 +85,6 @@ export function IntegrationsPage() {
               </button>
             </div>
 
-            <div className="mkt-cursor-badge">
-              <svg width="20" height="24" viewBox="0 0 20 24" fill="none">
-                <path d="M2 2L18 10L10.5 12.5L8 20L2 2Z" fill="#A068FF" />
-              </svg>
-              <span className="mkt-david-pill">David</span>
-            </div>
           </div>
 
           <div className="mkt-hero-right" ref={containerRef}>
