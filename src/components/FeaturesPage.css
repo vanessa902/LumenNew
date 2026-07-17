@@ -2,11 +2,16 @@
 
 .features-page {
   --card-width: clamp(150px, 30vw, 300px);
-  font-family: 'DM Sans', serif, 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+  font-family: 'Haffer X Trial', 'Space Grotesk', system-ui, sans-serif;
   color: #E1E0CC;
   position: relative;
   background: #000;
   min-height: 100vh;
+}
+
+.features-page,
+.features-page * {
+  font-family: 'Haffer X Trial', 'Space Grotesk', system-ui, sans-serif !important;
 }
 
 .features-page li article {
@@ -245,7 +250,11 @@
   margin: 0;
   padding-inline: calc(50% - (var(--card-width)) * 0.5);
   padding-block: 0.75rem;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+}
+
+.features-page ul::-webkit-scrollbar {
+  display: none;
 }
 
 .features-page [data-dragging='true'] a {

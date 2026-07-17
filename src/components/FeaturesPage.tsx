@@ -143,7 +143,11 @@ export function FeaturesPage() {
     <div className="features-page">
       <section
         className="h-screen p-4 md:p-6 relative"
-        style={{ background: "url('/LumenNew/features-bg.jpg') center center / cover no-repeat, #000" }}
+        style={{
+          background: "url('/LumenNew/features-bg.jpg') center center / cover no-repeat, #000",
+          overflow: 'hidden',
+          isolation: 'isolate',
+        }}
       >
         <SiteNavbar />
         <div className="container">
@@ -182,10 +186,12 @@ export function FeaturesPage() {
         </div>
       </section>
 
-      <BookDemoCTA
-        title="Ready to explore every feature?"
-        subtitle="Book a demo and see how Lumentrack brings it all together for your team."
-      />
+      <div style={{ marginTop: '4rem' }}>
+        <BookDemoCTA
+          title="Ready to explore every feature?"
+          subtitle="Book a demo and see how Lumentrack brings it all together for your team."
+        />
+      </div>
     </div>
   )
 }
