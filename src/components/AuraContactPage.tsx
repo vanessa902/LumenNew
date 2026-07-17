@@ -25,7 +25,7 @@ function ContactForm() {
         <SectionEyebrow label="Contact" tag="We reply fast" />
         <h2 className="mt-5 text-3xl md:text-5xl font-semibold tracking-tight leading-[1.02]">Get in touch</h2>
         <p className="mt-4 text-white/60 text-base leading-[1.6]">
-          Have a question about Aura? Send us a message and our team will get back to you within one business day.
+          Want to see Lumentrack in action? Book a demo or send us a message and our team will get back to you within one business day.
         </p>
       </div>
 
