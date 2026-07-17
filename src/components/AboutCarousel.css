@@ -33,7 +33,7 @@
     --ui-spacing-xl: var(--size-8);
     --ui-spacing-xxl: var(--size-11);
 
-    --base-font: 'Roboto';
+    --base-font: 'Haffer X Trial', 'Space Grotesk';
     --ui-label: var(--font-weight-5) var(--font-size-1) / var(--font-lineheight-0) var(--base-font), var(--font-system-ui);
     --ui-body: var(--font-weight-4) var(--font-size-2) / var(--font-lineheight-3) var(--base-font), var(--font-system-ui);
     --ui-title: var(--font-weight-5) var(--font-size-4) / var(--font-lineheight-1) var(--base-font), var(--font-system-ui);
