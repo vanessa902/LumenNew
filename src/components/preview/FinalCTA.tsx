@@ -2,9 +2,32 @@ import { ArrowRight } from 'lucide-react'
 
 export function FinalCTA() {
   return (
-    <section className="bg-black py-16 px-4 md:px-10">
-      <div className="max-w-6xl mx-auto rounded-[2rem] p-2 md:p-3" style={{ background: 'linear-gradient(160deg, #0b1230, #05060a)' }}>
-        <div className="relative rounded-[1.6rem] overflow-hidden border border-white/10 bg-[#0a0a0c]">
+    <section className="bg-black pt-16 px-4 md:px-10">
+      <style>{`
+        @keyframes finalcta-border-move {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 200% 50%; }
+        }
+        .finalcta-border {
+          background: linear-gradient(
+            90deg,
+            #05060a,
+            #0b1230,
+            #2A85FF,
+            #7fd4ff,
+            #0b1230,
+            #05060a,
+            #2A85FF,
+            #0b1230
+          );
+          background-size: 300% 100%;
+          animation: finalcta-border-move 8s linear infinite;
+        }
+      `}</style>
+      <div
+        className="max-w-6xl mx-auto rounded-t-[2rem] rounded-b-none p-2 md:p-3 pb-0 finalcta-border"
+      >
+        <div className="relative rounded-t-[1.6rem] rounded-b-none overflow-hidden border border-t-white/10 border-x-white/10 border-b-0 bg-[#0a0a0c]">
           {/* Window title bar */}
           <div className="h-9 flex items-center px-4 border-b border-white/10 relative">
             <div className="flex items-center gap-1.5">
