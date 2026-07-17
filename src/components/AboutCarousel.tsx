@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { createPortal } from 'react-dom'
 import { Zap, ClipboardList, CalendarDays, DollarSign, MonitorPlay, Sun, User } from 'lucide-react'
 
 const CARDS = [
@@ -116,18 +115,36 @@ export function AboutCarousel() {
       >
         {CARDS.map((card, i) => {
           const Icon = card.icon
+          const isZoomed = zoomed === i
           return (
-            <li key={i} className="card" style={{ '--card-glow-color': card.color } as React.CSSProperties}>
+            <li
+              key={i}
+              className="card"
+              style={
+                {
+                  '--card-glow-color': card.color,
+                  overflow: isZoomed ? 'visible' : 'hidden',
+                  zIndex: isZoomed ? 20 : 1,
+                } as React.CSSProperties
+              }
+            >
               <div className="carousel-card-glow" />
-              <div className="visual carousel-visual">
+              <div
+                className="visual carousel-visual"
+                onMouseEnter={() => setZoomed(i)}
+                onMouseLeave={() => setZoomed(null)}
+              >
                 <img
                   src={card.img}
                   alt={card.title}
                   className="img carousel-img"
                   draggable={false}
-                  onMouseEnter={() => setZoomed(i)}
-                  onMouseLeave={() => setZoomed(null)}
                 />
+                {isZoomed && (
+                  <div className="carousel-hover-box">
+                    <img src={card.img} alt={card.title} className="carousel-hover-box-img" draggable={false} />
+                  </div>
+                )}
               </div>
               <div className="content">
                 <div className="content-wrapper">
@@ -147,14 +164,6 @@ export function AboutCarousel() {
           )
         })}
       </ul>
-
-      {zoomed !== null &&
-        createPortal(
-          <div className="carousel-zoom-overlay" onMouseLeave={() => setZoomed(null)}>
-            <img src={CARDS[zoomed].img} alt={CARDS[zoomed].title} className="carousel-zoom-img" />
-          </div>,
-          document.body
-        )}
     </div>
   )
 }
