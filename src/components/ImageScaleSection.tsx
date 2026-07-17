@@ -18,9 +18,19 @@ export function ImageScaleSection() {
   const boxThreeRef = useRef<HTMLDivElement>(null)
   const boxFourRef = useRef<HTMLDivElement>(null)
   const overlayRef = useRef<HTMLImageElement>(null)
+  const leftRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      // Start collapsed (small peeking mockup), reveal to full image on scroll.
+      gsap.set(boxOneRef.current, { scaleY: 1 })
+      gsap.set(boxTwoRef.current, { scaleX: 1 })
+      gsap.set(boxThreeRef.current, { scaleY: 0.7 })
+      gsap.set(boxFourRef.current, { scaleX: 1 })
+      gsap.set(imageWrapperRef.current, { xPercent: 50 })
+      gsap.set(imageRef.current, { xPercent: -40, scale: 0.9, transformOrigin: 'bottom center' })
+      gsap.set(overlayRef.current, { opacity: 1 })
+
       const counterObj = { val: 0 }
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -35,7 +45,7 @@ export function ImageScaleSection() {
       tl.to(
         counterObj,
         {
-          val: 97,
+          val: 100,
           duration: 90,
           snap: { val: 1 },
           onUpdate: () => {
@@ -45,14 +55,15 @@ export function ImageScaleSection() {
         0
       )
         .to(headingRef.current, { duration: 60, color: '#DEDBC8' }, 0)
-        .to(imageWrapperRef.current, { xPercent: 50, duration: 20 }, 0)
-        .to(imageRef.current, { xPercent: -40, duration: 20 }, 0)
-        .to(imageRef.current, { transformOrigin: 'bottom center', scale: 0.9, duration: 70 }, 30)
-        .to(boxOneRef.current, { scaleY: 1, duration: 10 }, 30)
-        .to(boxTwoRef.current, { scaleX: 1, duration: 10 }, 40)
-        .to(boxThreeRef.current, { scaleY: 0.7, duration: 10 }, 50)
-        .to(boxFourRef.current, { scaleX: 1, duration: 10 }, 60)
-        .to(overlayRef.current, { opacity: 1, duration: 10 }, 95)
+        .to(overlayRef.current, { opacity: 0, duration: 10 }, 0)
+        .to(boxOneRef.current, { scaleY: 0, duration: 10 }, 30)
+        .to(boxTwoRef.current, { scaleX: 0, duration: 10 }, 40)
+        .to(boxThreeRef.current, { scaleY: 0, duration: 10 }, 50)
+        .to(boxFourRef.current, { scaleX: 0, duration: 10 }, 60)
+        .to(imageRef.current, { scale: 1, duration: 70 }, 30)
+        .to(imageWrapperRef.current, { xPercent: 0, duration: 20 }, 85)
+        .to(imageRef.current, { xPercent: 0, duration: 20 }, 85)
+        .to(leftRef.current, { opacity: 0, duration: 15 }, 90)
     }, sectionRef)
 
     return () => ctx.revert()
@@ -80,7 +91,7 @@ export function ImageScaleSection() {
           style={{ opacity: 0 }}
         />
 
-        <div className="image-scale__left relative z-[4] grid content-center h-full w-1/2 pr-12">
+        <div ref={leftRef} className="image-scale__left relative z-[4] grid content-center h-full w-1/2 pr-12">
           <span className="text-primary text-2xl md:text-3xl mb-6 block">Built for scale.</span>
           <h2 ref={headingRef} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] mb-8 text-white font-semibold">
             <span ref={counterRef}>0</span>%

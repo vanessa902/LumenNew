@@ -127,7 +127,6 @@ export function IntegrationsPage() {
       </div>
 
       <PrismaAbout
-        label="Explore integrations"
         gradientHover
         segments={[
           { text: 'Automate', className: 'font-medium text-primary' },

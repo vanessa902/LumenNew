@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 
-const DASHBOARD =
-  'https://raw.githubusercontent.com/vanessa902/lumen/claude/optimistic-wright-2wuv1k/src/nhm/dashboard.png'
+const DASHBOARD = '/LumenNew/preview/dashboard.png'
 
 interface Fx { rx: number; ry: number; gx: number; gy: number }
 
@@ -65,11 +64,11 @@ export function ParallaxMockup() {
           src={DASHBOARD}
           alt="Dashboard"
           draggable={false}
-          className="block w-full"
+          className="block w-full rounded-t-2xl md:rounded-t-[1.5rem] overflow-hidden"
         />
         {/* Glass reflection overlay */}
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none rounded-t-2xl md:rounded-t-[1.5rem] overflow-hidden"
           style={{
             WebkitMaskImage: `url(${DASHBOARD})`,
             maskImage:        `url(${DASHBOARD})`,

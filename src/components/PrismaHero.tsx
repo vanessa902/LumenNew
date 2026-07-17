@@ -4,26 +4,37 @@ import { useEffect, useState } from 'react'
 import { ParallaxMockup } from './ParallaxMockup'
 import { SiteNavbar } from './SiteNavbar'
 
-function TypeWriter({ text }: { text: string }) {
+function TypeWriter({ phrases }: { phrases: string[] }) {
   const [displayed, setDisplayed] = useState('')
-  const [done, setDone] = useState(false)
+  const [phraseIndex, setPhraseIndex] = useState(0)
 
   useEffect(() => {
+    const text = phrases[phraseIndex]
     let i = 0
+    let holdTimeout: ReturnType<typeof setTimeout>
+
     const interval = setInterval(() => {
       i++
       setDisplayed(text.slice(0, i))
-      if (i >= text.length) { clearInterval(interval); setDone(true) }
+      if (i >= text.length) {
+        clearInterval(interval)
+        holdTimeout = setTimeout(() => {
+          setDisplayed('')
+          setPhraseIndex(p => (p + 1) % phrases.length)
+        }, 1600)
+      }
     }, 80)
-    return () => clearInterval(interval)
-  }, [text])
+
+    return () => {
+      clearInterval(interval)
+      clearTimeout(holdTimeout)
+    }
+  }, [phraseIndex, phrases])
 
   return (
     <span>
       {displayed}
-      {!done && (
-        <span className="inline-block w-[3px] align-middle ml-1 animate-pulse" style={{ height: '0.8em', background: '#E1E0CC', borderRadius: 2 }} />
-      )}
+      <span className="inline-block w-[3px] align-middle ml-1 animate-pulse" style={{ height: '0.8em', background: '#E1E0CC', borderRadius: 2 }} />
     </span>
   )
 }
@@ -57,7 +68,7 @@ export function PrismaHero() {
             className="font-semibold leading-[0.85] tracking-[-0.07em] text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[10vw] xl:text-[9.5vw] 2xl:text-[10vw] mb-2"
             style={{ color: '#E1E0CC', textShadow: '0 4px 32px rgba(0,0,0,0.7), 0 1px 8px rgba(0,0,0,0.5)' }}
           >
-            <TypeWriter text="One plataform" />
+            <TypeWriter phrases={['One plataform', 'Total Control']} />
           </p>
           <div style={{ width: '64%' }}>
             <ParallaxMockup />
@@ -73,7 +84,7 @@ export function PrismaHero() {
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            Join the lab
+            Book a Demo
             <span className="bg-black rounded-full w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center group-hover:scale-110 transition-transform">
               <ArrowRight className="text-primary w-4 h-4" />
             </span>
