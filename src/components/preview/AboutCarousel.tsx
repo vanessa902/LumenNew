@@ -1,28 +1,38 @@
 const CARDS = [
   {
     img: '/LumenNew/scanifly/card0.png',
-    title: 'Install Tracker / CRM',
-    desc: 'Track leads, manage customer pipelines, store documents, and automate follow-ups across your entire team.',
+    title: 'Install Tracker',
+    desc: 'Track leads, manage customer pipelines, store documents, and automate follow-ups across your business.',
   },
   {
     img: '/LumenNew/scanifly/card1.png',
     title: 'Taskboard',
-    desc: 'Visual workflow management for every stage of the job.',
+    desc: 'Manage your daily, weekly, and monthly workflow in a crystal-clear, user-friendly interface.',
   },
   {
     img: '/LumenNew/scanifly/card2.png',
-    title: 'Install Calendar',
-    desc: 'Schedule and track every install phase from one view.',
+    title: 'Service Calendar',
+    desc: "Schedule your crew's work with drag-and-drop simplicity and readability.",
   },
   {
     img: '/LumenNew/scanifly/card3.png',
     title: 'Commission Tracker',
-    desc: 'Automatic payout calculation for setters, closers, managers.',
+    desc: "Calculate your team's payout with pinpoint, automatic precision.",
   },
   {
     img: '/LumenNew/scanifly/card4.png',
     title: 'Proposal Presentations',
-    desc: 'Build and export standalone battery or solar proposals for your customers.',
+    desc: 'Build a contract-winning presentation in minutes. Tailored for both standalone battery and full solar proposals.',
+  },
+  {
+    img: '/LumenNew/scanifly/card5.png',
+    title: 'Solar Design Tool',
+    desc: 'Design a highly-accurate solar installation with our easy-to-use, in-depth app.',
+  },
+  {
+    img: '/LumenNew/scanifly/card6.png',
+    title: 'Users & Offices',
+    desc: 'Manage your global workforce and office infrastructure in one place.',
   },
 ]
 
