@@ -120,8 +120,9 @@ export function AboutCarousel() {
         {CARDS.map((card, i) => {
           const Icon = card.icon
           return (
-            <li key={i} className="card">
+            <li key={i} className="card" style={{ '--card-glow-color': card.color } as React.CSSProperties}>
               <div className="visual carousel-visual">
+                <div className="carousel-card-glow" />
                 <img
                   src={card.img}
                   alt={card.title}

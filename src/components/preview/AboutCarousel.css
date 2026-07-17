@@ -172,11 +172,33 @@
     margin-block-end: var(--ui-spacing-xs);
   }
 
+  .preview-carousel .visual {
+    position: relative;
+  }
+
   .preview-carousel .carousel-visual {
     inline-size: 90%;
     block-size: 90%;
     margin-inline: auto;
     margin-block-start: 5%;
+  }
+
+  .preview-carousel .carousel-card-glow {
+    position: absolute;
+    inset: -10%;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 100% 65% at 50% 0%,
+      color-mix(in srgb, var(--card-glow-color) 70%, transparent) 0%,
+      color-mix(in srgb, var(--card-glow-color) 30%, transparent) 40%,
+      transparent 75%
+    );
+  }
+
+  .preview-carousel .carousel-img {
+    position: relative;
+    z-index: 1;
   }
 
   .preview-carousel .carousel-img {
