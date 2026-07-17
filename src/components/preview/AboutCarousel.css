@@ -88,6 +88,7 @@
   }
 
   .preview-carousel .card {
+    position: relative;
     scroll-snap-align: start;
     background-color: var(--ui-surface);
     border-radius: var(--ui-card-radius);
@@ -97,19 +98,22 @@
     grid-template-rows: subgrid;
     padding: var(--ui-spacing-xs);
     inline-size: min(75cqi, 320px);
+    overflow: hidden;
   }
 
   .preview-carousel .visual {
+    position: relative;
+    z-index: 1;
     border-radius: var(--ui-visual-radius);
-    overflow: clip;
+    overflow: visible;
   }
 
   .preview-carousel .img {
     display: block;
     inline-size: 100%;
     block-size: 100%;
-    object-fit: cover;
-    background-color: var(--ui-surface-container);
+    object-fit: contain;
+    background-color: transparent;
   }
 
   .preview-carousel .content {
@@ -172,10 +176,6 @@
     margin-block-end: var(--ui-spacing-xs);
   }
 
-  .preview-carousel .visual {
-    position: relative;
-  }
-
   .preview-carousel .carousel-visual {
     inline-size: 90%;
     block-size: 90%;
@@ -185,20 +185,15 @@
 
   .preview-carousel .carousel-card-glow {
     position: absolute;
-    inset: -10%;
+    inset: 0;
     z-index: 0;
     pointer-events: none;
     background: radial-gradient(
-      ellipse 100% 65% at 50% 0%,
-      color-mix(in srgb, var(--card-glow-color) 70%, transparent) 0%,
-      color-mix(in srgb, var(--card-glow-color) 30%, transparent) 40%,
-      transparent 75%
+      ellipse 100% 55% at 50% 0%,
+      color-mix(in srgb, var(--card-glow-color) 65%, transparent) 0%,
+      color-mix(in srgb, var(--card-glow-color) 25%, transparent) 35%,
+      transparent 70%
     );
-  }
-
-  .preview-carousel .carousel-img {
-    position: relative;
-    z-index: 1;
   }
 
   .preview-carousel .carousel-img {
