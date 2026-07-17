@@ -24,6 +24,7 @@ import {
   Cpu,
 } from 'lucide-react'
 import { SiteNavbar } from './SiteNavbar'
+import { BookDemoCTA } from './BookDemoCTA'
 import './AboutUsPage.css'
 
 const VIDEO_URL =
@@ -459,6 +460,10 @@ export function AboutUsPage() {
       <InstallTrackerMockup />
       <FeatureTriage />
       <Testimonials />
+      <BookDemoCTA
+        title="Ready to grow with Lumentrack?"
+        subtitle="Book a demo and see why teams trust Lumentrack to run their business."
+      />
     </div>
   )
 }

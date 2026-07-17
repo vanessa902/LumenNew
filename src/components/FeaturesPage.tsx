@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 import { ClipboardList, CalendarDays, DollarSign, MonitorPlay, Zap, Sun, User, ClipboardCheck } from 'lucide-react'
 import { SiteNavbar } from './SiteNavbar'
+import { BookDemoCTA } from './BookDemoCTA'
 import './FeaturesPage.css'
 
 function TypewriterSegments({ lines }: { lines: string[] }) {
@@ -180,6 +181,11 @@ export function FeaturesPage() {
           </main>
         </div>
       </section>
+
+      <BookDemoCTA
+        title="Ready to explore every feature?"
+        subtitle="Book a demo and see how Lumentrack brings it all together for your team."
+      />
     </div>
   )
 }
