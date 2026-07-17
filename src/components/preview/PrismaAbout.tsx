@@ -80,13 +80,12 @@ function TypewriterSegments({ segments }: { segments: Segment[] }) {
 const DEFAULT_SEGMENTS: Segment[] = [
   { text: 'The', className: 'font-medium text-primary' },
   { text: ' all-in-one', className: 'font-medium text-primary' },
-  { text: ' operating', className: 'font-medium text-primary' },
-  { text: ' system', className: 'font-medium text-primary' },
-  { text: ' for', className: 'font-medium text-primary' },
+  { text: ' tracking', className: 'font-medium text-primary' },
+  { text: ' solution\n', className: 'font-medium text-primary' },
+  { text: 'for', className: 'font-medium text-primary' },
   { text: ' contractors', className: 'font-medium text-primary' },
   { text: ' and', className: 'font-medium text-primary' },
-  { text: ' service', className: 'font-medium text-primary' },
-  { text: ' businesses.', className: 'font-medium text-primary' },
+  { text: ' businesses', className: 'font-medium text-primary' },
 ]
 
 export function PrismaAbout({
