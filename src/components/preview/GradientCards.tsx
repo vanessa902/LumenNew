@@ -1,15 +1,15 @@
 const CARDS = [
   {
-    title: 'Create',
-    desc: 'The most powerful editing and design tools in one place.',
+    title: 'Organized Sales Flow',
+    desc: 'Track every lead, proposal, and installation in one place. Keep your sales team aligned with full access to the work pipeline at every step.',
   },
   {
-    title: 'Publish',
-    desc: 'Launch the next iconic project. No code needed. Ever.',
+    title: 'Easy for Teams',
+    desc: 'With minimal training required, everyone – from your internal staff to external vendors and collaborators – can keep track of what’s happening in your business.',
   },
   {
-    title: 'Grow',
-    desc: 'Scale your business with automation built right in.',
+    title: 'Customizable Interface',
+    desc: 'Each business has different needs. Lumentrack® can fit them all. Whether you’re tracking a solar installation, keeping in touch with your workforce, or drafting a new proposal, this is the only CRM solution you’ll ever need.',
   },
 ]
 
