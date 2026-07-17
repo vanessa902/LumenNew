@@ -314,3 +314,28 @@
 .tracker-scroll::-webkit-scrollbar-thumb:hover {
   background-color: rgba(59, 130, 246, 0.6);
 }
+
+.about-color-cycle {
+  animation: about-color-cycle 20s ease-in-out infinite;
+}
+
+@keyframes about-color-cycle {
+  0%, 4% {
+    background-color: #ff3b30;
+  }
+  20%, 24% {
+    background-color: #34c759;
+  }
+  40%, 44% {
+    background-color: #a855f7;
+  }
+  60%, 64% {
+    background-color: #2a85ff;
+  }
+  80%, 84% {
+    background-color: #ffcc00;
+  }
+  100% {
+    background-color: #ff3b30;
+  }
+}
