@@ -72,12 +72,9 @@ export function FinalCTA() {
 
             <div className="relative mt-8">
               <button className="inline-flex items-center gap-2 bg-[#2A85FF] hover:bg-[#1c6fe0] transition-colors text-white font-semibold text-sm md:text-base px-6 py-3 rounded-full">
-                Sign up for free
+                Book a Demo
                 <ArrowRight className="w-4 h-4" />
               </button>
-              <span className="absolute -right-10 top-full mt-1 text-[10px] font-medium text-white bg-[#2A85FF] px-2 py-0.5 rounded-full rounded-tl-none whitespace-nowrap">
-                You
-              </span>
             </div>
           </div>
         </div>
