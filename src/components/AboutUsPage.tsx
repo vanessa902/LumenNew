@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
@@ -51,18 +52,41 @@ function AppleButton({ label = 'Book a Demo', full = false }: { label?: string; 
   )
 }
 
-const gradientStyle: React.CSSProperties = {
-  backgroundImage:
-    'linear-gradient(to right, #091020 0%, #0B2551 12.5%, #A4F4FD 32.5%, #00d2ff 50%, #0B2551 67.5%, #091020 87.5%, #091020 100%)',
-  backgroundSize: '200% auto',
-  WebkitBackgroundClip: 'text',
-  backgroundClip: 'text',
-  color: 'transparent',
-  WebkitTextFillColor: 'transparent',
-  filter: 'url(#c3-noise-root)',
+// Text gradients tuned for contrast against each phase of the .about-color-cycle
+// background (red, green, purple, blue, yellow, in that order).
+const CONTRAST_GRADIENTS = [
+  'linear-gradient(to right, #062a2b 0%, #0a4d4f 12.5%, #b6fffb 32.5%, #22e6d9 50%, #0a4d4f 67.5%, #062a2b 87.5%, #062a2b 100%)',
+  'linear-gradient(to right, #2b0a29 0%, #4d0f49 12.5%, #ffd6f7 32.5%, #ff5ce0 50%, #4d0f49 67.5%, #2b0a29 87.5%, #2b0a29 100%)',
+  'linear-gradient(to right, #2b2205 0%, #4d3d09 12.5%, #fff4c2 32.5%, #ffd54a 50%, #4d3d09 67.5%, #2b2205 87.5%, #2b2205 100%)',
+  'linear-gradient(to right, #2b1503 0%, #4d2607 12.5%, #ffe2c2 32.5%, #ff9a4a 50%, #4d2607 67.5%, #2b1503 87.5%, #2b1503 100%)',
+  'linear-gradient(to right, #091020 0%, #0B2551 12.5%, #A4F4FD 32.5%, #00d2ff 50%, #0B2551 67.5%, #091020 87.5%, #091020 100%)',
+]
+
+function useColorCyclePhase(steps: number, intervalMs: number) {
+  const [phase, setPhase] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => setPhase(p => (p + 1) % steps), intervalMs)
+    return () => clearInterval(id)
+  }, [steps, intervalMs])
+
+  return phase
 }
 
 function Hero() {
+  const phase = useColorCyclePhase(CONTRAST_GRADIENTS.length, 4000)
+
+  const gradientStyle: React.CSSProperties = {
+    backgroundImage: CONTRAST_GRADIENTS[phase],
+    backgroundSize: '200% auto',
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+    color: 'transparent',
+    WebkitTextFillColor: 'transparent',
+    filter: 'url(#c3-noise-root)',
+    transition: 'background-image 0.6s ease',
+  }
+
   return (
     <section className="relative z-10 pt-16 md:pt-28 pb-20 text-center flex flex-col items-center px-6">
       <motion.h1
