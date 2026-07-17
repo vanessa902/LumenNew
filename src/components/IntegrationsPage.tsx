@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import { SiteNavbar } from './SiteNavbar'
-import { PrismaAbout } from './PrismaAbout'
 import { IntegrationsToolsSection } from './IntegrationsToolsSection'
 import { IntegrationsFeatureCards } from './IntegrationsFeatureCards'
 import './IntegrationsPage.css'
@@ -125,18 +124,6 @@ export function IntegrationsPage() {
           </div>
         </div>
       </div>
-
-      <PrismaAbout
-        gradientHover
-        segments={[
-          { text: 'Automate', className: 'font-medium text-primary' },
-          { text: ' Your Workflow.\n', className: 'font-medium text-primary' },
-          { text: 'Supercharge', className: 'font-medium text-primary' },
-          { text: ' Your Sales Process.\n', className: 'font-medium text-primary' },
-          { text: 'Unlock', className: 'font-medium text-primary' },
-          { text: ' Seamless Syncing', className: 'font-medium text-primary' },
-        ]}
-      />
 
       <IntegrationsToolsSection />
 
