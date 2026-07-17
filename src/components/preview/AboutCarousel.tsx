@@ -75,10 +75,6 @@ export function AboutCarousel() {
     return () => clearInterval(id)
   }, [paused])
 
-  const scrollByDir = (dir: 1 | -1) => {
-    trackRef.current?.scrollBy({ left: dir * 260, behavior: 'smooth' })
-  }
-
   const onMouseDown = (e: React.MouseEvent<HTMLUListElement>) => {
     const el = trackRef.current
     if (!el) return
@@ -150,15 +146,6 @@ export function AboutCarousel() {
           )
         })}
       </ul>
-
-      <div className="carousel-controls">
-        <button aria-label="Previous" className="carousel-arrow" onClick={() => scrollByDir(-1)}>
-          ←
-        </button>
-        <button aria-label="Next" className="carousel-arrow" onClick={() => scrollByDir(1)}>
-          →
-        </button>
-      </div>
 
       {zoomed !== null && (
         <div className="carousel-zoom-overlay" onMouseLeave={() => setZoomed(null)}>
