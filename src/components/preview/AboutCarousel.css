@@ -22,7 +22,7 @@
     --ui-surface: #1c1c1c;
     --ui-surface-container: #0a0a0a;
     --ui-on-surface: #f2f2f2;
-    --ui-primary: var(--hdr-orange-2);
+    --ui-primary: #2A85FF;
 
     --ui-spacing-none: 0;
     --ui-spacing-xxs: var(--size-1);
@@ -161,6 +161,73 @@
     border-radius: var(--ui-btn-radius);
     font: var(--icon-font-small);
     content: 'arrow_forward_ios' / 'Arrow';
+  }
+
+  .preview-carousel .feature-icon {
+    inline-size: 34px;
+    block-size: 34px;
+    border-radius: var(--ui-btn-radius);
+    display: grid;
+    place-items: center;
+    margin-block-end: var(--ui-spacing-xs);
+  }
+
+  .preview-carousel .carousel-visual {
+    inline-size: 90%;
+    block-size: 90%;
+    margin-inline: auto;
+    margin-block-start: 5%;
+  }
+
+  .preview-carousel .carousel-img {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+
+  .preview-carousel .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    inline-size: 44px;
+    block-size: 44px;
+    border-radius: 999px;
+    border: 1px solid var(--ui-primary);
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--ui-primary);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 5;
+    transition: background 0.2s ease;
+  }
+
+  .preview-carousel .carousel-arrow:hover {
+    background: color-mix(in oklch, var(--ui-primary), transparent 80%);
+  }
+
+  .preview-carousel .carousel-arrow-left {
+    left: 8px;
+  }
+
+  .preview-carousel .carousel-arrow-right {
+    right: 8px;
+  }
+
+  .preview-carousel .carousel-zoom-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: grid;
+    place-items: center;
+    z-index: 1000;
+  }
+
+  .preview-carousel .carousel-zoom-img {
+    max-inline-size: 90vw;
+    max-block-size: 90vh;
+    object-fit: contain;
+    border-radius: var(--ui-visual-radius);
   }
 
   @supports (scroll-marker-group: after) {
