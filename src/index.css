@@ -2,13 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-Heavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Haffer X Trial';
+  src: url('/LumenNew/fonts/haffer/Haffer-TRIAL-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
   background: #000;
 }
 
 * {
-  font-family: 'Haffer X Trial', 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: 'Haffer X Trial', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
 }
 
 .noise-overlay {
