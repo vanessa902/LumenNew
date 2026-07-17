@@ -2,7 +2,18 @@ import { ArrowRight } from 'lucide-react'
 
 export function FinalCTA() {
   return (
-    <section className="bg-black pt-16 px-4 md:px-10">
+    <section className="relative bg-black pt-16 px-4 md:px-10 overflow-hidden">
+      {/* Depth glow behind the card */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div
+          className="w-[70%] h-[60%] rounded-full blur-[120px] opacity-40"
+          style={{ background: 'radial-gradient(circle, #2A85FF 0%, #0b1230 55%, transparent 75%)' }}
+        />
+        <div
+          className="absolute w-[35%] h-[40%] rounded-full blur-[100px] opacity-30 -translate-x-[30%] translate-y-[10%]"
+          style={{ background: 'radial-gradient(circle, #7fd4ff 0%, transparent 70%)' }}
+        />
+      </div>
       <style>{`
         @keyframes finalcta-border-move {
           0% { background-position: 0% 50%; }
@@ -25,7 +36,7 @@ export function FinalCTA() {
         }
       `}</style>
       <div
-        className="max-w-6xl mx-auto rounded-t-[2rem] rounded-b-none p-2 md:p-3 pb-0 finalcta-border"
+        className="relative z-10 max-w-6xl mx-auto rounded-t-[2rem] rounded-b-none p-2 md:p-3 pb-0 finalcta-border"
       >
         <div className="relative rounded-t-[1.6rem] rounded-b-none overflow-hidden border border-t-white/10 border-x-white/10 border-b-0 bg-[#0a0a0c]">
           {/* Window title bar */}
