@@ -1,4 +1,15 @@
 import { ArrowRight } from 'lucide-react'
+import { TypewriterSegments, type Segment } from './TypewriterSegments'
+
+const TITLE_SEGMENTS: Segment[] = [
+  { text: 'Simplify', className: 'font-medium text-primary' },
+  { text: ' your', className: 'font-medium text-primary' },
+  { text: ' workflow\n', className: 'font-medium text-primary' },
+  { text: 'with', className: 'font-medium text-primary' },
+  { text: ' Lumentrack', className: 'font-medium text-primary' },
+  { text: ' Smart', className: 'font-medium text-primary' },
+  { text: ' Integrations', className: 'font-medium text-primary' },
+]
 
 const TOOLS = [
   {
@@ -50,9 +61,7 @@ export function IntegrationsToolsSection() {
     <section className="integrations-tools-section">
       <div className="integrations-tools-header">
         <h2>
-          Simplify your workflow
-          <br />
-          with Lumentrack Smart Integrations
+          <TypewriterSegments segments={TITLE_SEGMENTS} />
         </h2>
         <p>
           More than a CRM. When used with our smart integrations, Lumentrack&reg; becomes the command center of your
