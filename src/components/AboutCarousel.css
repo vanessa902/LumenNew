@@ -222,20 +222,21 @@
     user-select: none;
   }
 
-  .preview-carousel .carousel-zoom-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.9);
-    display: grid;
-    place-items: center;
-    z-index: 1000;
-  }
+}
 
-  .preview-carousel .carousel-zoom-img {
-    max-inline-size: 90vw;
-    max-block-size: 90vh;
-    object-fit: contain;
-    border-radius: var(--ui-visual-radius);
-  }
+/* Portaled to document.body, so must live outside the scoped layer/selectors above. */
+.carousel-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
 
+.carousel-zoom-img {
+  max-inline-size: 90vw;
+  max-block-size: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
 }
