@@ -190,7 +190,7 @@
 .integrations-page .mkt-orbit-1 {
   width: 353px;
   height: 353px;
-  animation: mkt-spin-left 30s linear infinite;
+  animation: mkt-spin-left 6s linear infinite;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -199,39 +199,19 @@
 .integrations-page .mkt-orbit-2 {
   width: 501px;
   height: 501px;
-  animation: mkt-spin-right 40s linear infinite;
+  animation: mkt-spin-right 8s linear infinite;
 }
 
 .integrations-page .mkt-orbit-3 {
   width: 649px;
   height: 649px;
-  animation: mkt-spin-right 50s linear infinite;
+  animation: mkt-spin-right 10s linear infinite;
 }
 
 .integrations-page .mkt-orbit-4 {
   width: 797px;
   height: 797px;
-  animation: mkt-spin-left 60s linear infinite;
-}
-
-.integrations-page .mkt-orbit {
-  transition: animation-duration 0.4s ease;
-}
-
-.integrations-page .mkt-hero-right:hover .mkt-orbit-1 {
-  animation-duration: 6s;
-}
-
-.integrations-page .mkt-hero-right:hover .mkt-orbit-2 {
-  animation-duration: 8s;
-}
-
-.integrations-page .mkt-hero-right:hover .mkt-orbit-3 {
-  animation-duration: 10s;
-}
-
-.integrations-page .mkt-hero-right:hover .mkt-orbit-4 {
-  animation-duration: 12s;
+  animation: mkt-spin-left 12s linear infinite;
 }
 
 @keyframes mkt-spin-left {
@@ -284,7 +264,7 @@
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1), linear;
   animation-fill-mode: both, none;
   animation-iteration-count: 1, infinite;
-  animation-play-state: running, paused;
+  animation-play-state: running, running;
 }
 
 .integrations-page .mkt-avatar img {
@@ -362,11 +342,6 @@
 
 .integrations-page .mkt-avatar--wave-left {
   animation-name: mkt-avatar-in, mkt-avatar-wave-left;
-}
-
-.integrations-page .mkt-hero-right:hover .mkt-avatar--wave-left,
-.integrations-page .mkt-hero-right:hover .mkt-avatar--wave-right {
-  animation-play-state: running, running;
 }
 
 .integrations-page .mkt-ticker {
