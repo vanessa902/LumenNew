@@ -3,6 +3,7 @@ import { PrismaAbout } from './preview/PrismaAbout'
 import { PrismaFeatures } from './preview/PrismaFeatures'
 import { MarqueeBanner } from './preview/MarqueeBanner'
 import { ImageScaleSection } from './preview/ImageScaleSection'
+import { FinalCTA } from './preview/FinalCTA'
 import { Footer } from './preview/Footer'
 
 export function PreviewHome() {
@@ -13,6 +14,7 @@ export function PreviewHome() {
       <PrismaFeatures />
       <MarqueeBanner />
       <ImageScaleSection />
+      <FinalCTA />
       <Footer />
     </main>
   )

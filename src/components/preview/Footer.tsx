@@ -30,6 +30,8 @@ export function Footer() {
   return (
     <footer className="bg-black text-white/70 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 md:px-8 pt-16 pb-10">
+        <img src="/LumenNew/logo.svg" alt="Lumentrack" className="h-6 md:h-7 w-auto mb-10" />
+
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 border-t border-white/10 pt-10">
           {COLUMNS.map(col => (
             <div key={col.title}>
