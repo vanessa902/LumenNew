@@ -79,6 +79,8 @@
     scroll-padding-inline: var(--_carousel-inline-padding);
     scroll-snap-type: inline mandatory;
     margin: 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
   }
 
   @media (width >=768px) {
@@ -199,33 +201,6 @@
   .preview-carousel .carousel-img {
     cursor: zoom-in;
     transition: transform 0.3s ease;
-  }
-
-  .preview-carousel .carousel-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--ui-spacing-sm);
-    margin-block-start: var(--ui-spacing-sm);
-  }
-
-  .preview-carousel .carousel-arrow {
-    inline-size: 44px;
-    block-size: 44px;
-    border-radius: 999px;
-    border: 1px solid var(--ui-primary);
-    background: rgba(0, 0, 0, 0.4);
-    color: var(--ui-primary);
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    font-size: 18px;
-    z-index: 5;
-    transition: background 0.2s ease;
-  }
-
-  .preview-carousel .carousel-arrow:hover {
-    background: color-mix(in oklch, var(--ui-primary), transparent 80%);
   }
 
   .preview-carousel .carousel-draggable {
