@@ -1,4 +1,3 @@
-import { Suspense, lazy } from 'react'
 import { motion } from 'framer-motion'
 import {
   ChevronRight,
@@ -26,8 +25,6 @@ import {
 } from 'lucide-react'
 import { SiteNavbar } from './SiteNavbar'
 import './AboutUsPage.css'
-
-const Spline = lazy(() => import('@splinetool/react-spline'))
 
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_064122_c4750c0e-7476-4b44-94a2-a85a65c63bf2.mp4'
@@ -436,24 +433,6 @@ function Testimonials() {
   )
 }
 
-function FinalCTA() {
-  return (
-    <section className="relative z-10 w-full">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="relative overflow-hidden w-full h-screen"
-      >
-        <Suspense fallback={null}>
-          <Spline scene="https://prod.spline.design/9t3iimkfpXQv7SCA/scene.splinecode" className="absolute inset-0 w-full h-full" />
-        </Suspense>
-      </motion.div>
-    </section>
-  )
-}
-
 export function AboutUsPage() {
   return (
     <div className="aura-page relative min-h-screen overflow-x-hidden bg-[#0c0c0c] text-white">
@@ -480,7 +459,6 @@ export function AboutUsPage() {
       <InstallTrackerMockup />
       <FeatureTriage />
       <Testimonials />
-      <FinalCTA />
     </div>
   )
 }
