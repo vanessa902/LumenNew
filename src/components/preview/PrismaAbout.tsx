@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import { useInView } from 'framer-motion'
 import { AboutCarousel } from './AboutCarousel'
+import { GradientCards } from './GradientCards'
 import './AboutCarousel.css'
 
 interface Segment { text: string; className: string }
@@ -106,6 +107,7 @@ export function PrismaAbout({
           <TypewriterSegments segments={segments} />
         </div>
         <AboutCarousel />
+        <GradientCards />
       </div>
     </section>
   )
