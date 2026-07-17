@@ -208,42 +208,6 @@
     transition: transform 0.3s ease;
   }
 
-  .preview-carousel .carousel-hover-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    inline-size: 240%;
-    block-size: 240%;
-    max-inline-size: 60vw;
-    max-block-size: 60vh;
-    background: #000;
-    border-radius: 20px;
-    padding: 20px;
-    display: grid;
-    place-items: center;
-    box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
-    z-index: 30;
-    animation: carousel-hover-box-in 0.2s ease both;
-  }
-
-  .preview-carousel .carousel-hover-box-img {
-    max-inline-size: 100%;
-    max-block-size: 100%;
-    object-fit: contain;
-  }
-
-  @keyframes carousel-hover-box-in {
-    from {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-  }
-
   .preview-carousel .carousel-draggable {
     cursor: grab;
   }
@@ -258,4 +222,48 @@
     user-select: none;
   }
 
+}
+
+/* Portaled to document.body, so must live outside the scoped layer/selectors above. */
+.carousel-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.carousel-zoom-box {
+  pointer-events: auto;
+  background: #1c1c1e;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  display: grid;
+  place-items: center;
+  animation: carousel-zoom-box-in 0.18s ease both;
+  inline-size: min(80vw, 720px);
+  block-size: min(75vh, 560px);
+}
+
+.carousel-zoom-img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+@keyframes carousel-zoom-box-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

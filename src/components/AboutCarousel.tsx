@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Zap, ClipboardList, CalendarDays, DollarSign, MonitorPlay, Sun, User } from 'lucide-react'
 
 const CARDS = [
@@ -58,6 +59,23 @@ export function AboutCarousel() {
   const [paused, setPaused] = useState(false)
   const [zoomed, setZoomed] = useState<number | null>(null)
   const drag = useRef({ isDown: false, startX: 0, scrollLeft: 0, moved: false })
+  const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const openZoom = (i: number) => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current)
+    setZoomed(i)
+  }
+  const scheduleClose = () => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current)
+    closeTimeout.current = setTimeout(() => setZoomed(null), 200)
+  }
+  const cancelClose = () => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current)
+  }
+  const closeZoomNow = () => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current)
+    setZoomed(null)
+  }
 
   useEffect(() => {
     if (paused) return
@@ -74,6 +92,12 @@ export function AboutCarousel() {
     }, 2600)
     return () => clearInterval(id)
   }, [paused])
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeout.current) clearTimeout(closeTimeout.current)
+    }
+  }, [])
 
   const onMouseDown = (e: React.MouseEvent<HTMLUListElement>) => {
     const el = trackRef.current
@@ -115,24 +139,13 @@ export function AboutCarousel() {
       >
         {CARDS.map((card, i) => {
           const Icon = card.icon
-          const isZoomed = zoomed === i
           return (
-            <li
-              key={i}
-              className="card"
-              style={
-                {
-                  '--card-glow-color': card.color,
-                  overflow: isZoomed ? 'visible' : 'hidden',
-                  zIndex: isZoomed ? 20 : 1,
-                } as React.CSSProperties
-              }
-            >
+            <li key={i} className="card" style={{ '--card-glow-color': card.color } as React.CSSProperties}>
               <div className="carousel-card-glow" />
               <div
                 className="visual carousel-visual"
-                onMouseEnter={() => setZoomed(i)}
-                onMouseLeave={() => setZoomed(null)}
+                onMouseEnter={() => openZoom(i)}
+                onMouseLeave={scheduleClose}
               >
                 <img
                   src={card.img}
@@ -140,11 +153,6 @@ export function AboutCarousel() {
                   className="img carousel-img"
                   draggable={false}
                 />
-                {isZoomed && (
-                  <div className="carousel-hover-box">
-                    <img src={card.img} alt={card.title} className="carousel-hover-box-img" draggable={false} />
-                  </div>
-                )}
               </div>
               <div className="content">
                 <div className="content-wrapper">
@@ -164,6 +172,16 @@ export function AboutCarousel() {
           )
         })}
       </ul>
+
+      {zoomed !== null &&
+        createPortal(
+          <div className="carousel-zoom-overlay">
+            <div className="carousel-zoom-box" onMouseEnter={cancelClose} onMouseLeave={closeZoomNow}>
+              <img src={CARDS[zoomed].img} alt={CARDS[zoomed].title} className="carousel-zoom-img" />
+            </div>
+          </div>,
+          document.body
+        )}
     </div>
   )
 }
