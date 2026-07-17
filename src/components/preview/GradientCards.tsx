@@ -22,10 +22,7 @@ function Card({ title, desc }: { title: string; desc: string }) {
       >
         <span className="gradient-hover-title">{title}</span>
       </h3>
-      <p className="text-sm text-white/60 mb-4">{desc}</p>
-      <a href="#" className="inline-flex items-center gap-1 text-sm font-medium text-white/80 group-hover:text-white transition-colors">
-        Learn More <span aria-hidden>→</span>
-      </a>
+      <p className="text-sm text-white/60">{desc}</p>
     </div>
   )
 }
