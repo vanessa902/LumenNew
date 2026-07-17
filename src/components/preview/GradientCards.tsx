@@ -13,9 +13,26 @@ const CARDS = [
   },
 ]
 
+function Card({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="group relative rounded-2xl border border-white/10 bg-[#0e0e10] p-6 overflow-hidden h-full">
+      <h3
+        className="text-2xl font-semibold mb-3 bg-clip-text text-transparent transition-[background-image] duration-500"
+        style={{ backgroundImage: 'linear-gradient(90deg, #fff, #fff)' }}
+      >
+        <span className="gradient-hover-title">{title}</span>
+      </h3>
+      <p className="text-sm text-white/60 mb-4">{desc}</p>
+      <a href="#" className="inline-flex items-center gap-1 text-sm font-medium text-white/80 group-hover:text-white transition-colors">
+        Learn More <span aria-hidden>→</span>
+      </a>
+    </div>
+  )
+}
+
 export function GradientCards() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10 text-left">
+    <section className="bg-black py-16 px-4 md:px-10">
       <style>{`
         .gradient-hover-title {
           background-image: linear-gradient(90deg, #ffffff, #ffffff);
@@ -28,34 +45,34 @@ export function GradientCards() {
           background-image: linear-gradient(90deg, #ff5f6d, #ffc371, #2A85FF, #a855f7);
         }
       `}</style>
-      {CARDS.map(card => (
-        <div
-          key={card.title}
-          className="group relative rounded-2xl border border-white/10 bg-[#0e0e10] p-6 overflow-hidden"
-        >
-          <h3
-            className="text-2xl font-semibold mb-3 bg-clip-text text-transparent transition-[background-image] duration-500"
-            style={{
-              backgroundImage: 'linear-gradient(90deg, #fff, #fff)',
-            }}
-          >
-            <span className="gradient-hover-title">{card.title}</span>
-          </h3>
-          <p className="text-sm text-white/60 mb-4">{card.desc}</p>
-          <a href="#" className="inline-flex items-center gap-1 text-sm font-medium text-white/80 group-hover:text-white transition-colors">
-            Learn More <span aria-hidden>→</span>
-          </a>
-
-          <div className="mt-6 h-40 rounded-xl bg-white/[0.03] border border-white/5 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-40 blur-[1px]">
-              <div className="h-full w-full grid grid-cols-3 gap-2 p-3">
-                <div className="col-span-1 bg-white/5 rounded-md" />
-                <div className="col-span-2 bg-white/5 rounded-md" />
-              </div>
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
+        {/* Left: video mockup placeholder */}
+        <div className="relative rounded-2xl border border-white/10 bg-[#0e0e10] overflow-hidden min-h-[320px] lg:min-h-full flex items-center justify-center">
+          <div className="absolute inset-0 opacity-40 blur-[1px]">
+            <div className="h-full w-full grid grid-cols-3 gap-2 p-3">
+              <div className="col-span-1 bg-white/5 rounded-md" />
+              <div className="col-span-2 bg-white/5 rounded-md" />
             </div>
           </div>
+          <button
+            aria-label="Play video"
+            className="relative z-10 w-16 h-16 rounded-full bg-white/10 border border-white/20 backdrop-blur flex items-center justify-center hover:bg-white/20 transition-colors"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="white" className="ml-1">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </button>
         </div>
-      ))}
-    </div>
+
+        {/* Right: 2 cards on top, 1 below */}
+        <div className="grid grid-cols-1 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <Card title={CARDS[0].title} desc={CARDS[0].desc} />
+            <Card title={CARDS[1].title} desc={CARDS[1].desc} />
+          </div>
+          <Card title={CARDS[2].title} desc={CARDS[2].desc} />
+        </div>
+      </div>
+    </section>
   )
 }

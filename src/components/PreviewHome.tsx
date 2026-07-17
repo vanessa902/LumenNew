@@ -1,4 +1,5 @@
 import { PrismaHero } from './preview/PrismaHero'
+import { GradientCards } from './preview/GradientCards'
 import { PrismaAbout } from './preview/PrismaAbout'
 import { MarqueeBanner } from './preview/MarqueeBanner'
 import { ImageScaleSection } from './preview/ImageScaleSection'
@@ -9,6 +10,7 @@ export function PreviewHome() {
   return (
     <main style={{ background: '#000' }}>
       <PrismaHero />
+      <GradientCards />
       <PrismaAbout />
       <MarqueeBanner />
       <ImageScaleSection />
