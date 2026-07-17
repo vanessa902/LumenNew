@@ -81,6 +81,11 @@
     margin: 0;
     -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
     mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    scrollbar-width: none;
+  }
+
+  .preview-carousel .cards::-webkit-scrollbar {
+    display: none;
   }
 
   @media (width >=768px) {
