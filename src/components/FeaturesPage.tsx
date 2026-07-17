@@ -142,7 +142,7 @@ export function FeaturesPage() {
   return (
     <div className="features-page">
       <section
-        className="h-screen p-4 md:p-6 relative"
+        className="min-h-screen p-4 md:p-6 pb-16 relative"
         style={{
           background: "url('/LumenNew/features-bg.jpg') center center / cover no-repeat, #000",
           overflow: 'hidden',
