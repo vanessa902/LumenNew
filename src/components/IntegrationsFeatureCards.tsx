@@ -60,8 +60,11 @@ export function IntegrationsFeatureCards() {
   const dragHandlers = useDragScroll(listRef)
 
   return (
-    <div className="features-page" style={{ minHeight: 'auto' }}>
-      <section className="p-4 md:p-6 relative" style={{ background: '#000', height: '80vh' }}>
+    <div className="features-page" style={{ minHeight: 'auto', overflow: 'hidden' }}>
+      <section
+        className="p-4 md:p-6 relative"
+        style={{ background: '#000', height: '80vh', overflow: 'hidden', isolation: 'isolate' }}
+      >
         <div className="container">
           <div className="features-heading">
             <div className="features-typewriter" style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)' }}>
