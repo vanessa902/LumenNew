@@ -1,29 +1,47 @@
+import { ArrowRight } from 'lucide-react'
+
 const TOOLS = [
   {
     name: 'Zapier',
     icon: '/LumenNew/scanifly/logo-4.png',
     bg: '#FF4A00',
     description:
-      'Build and scale AI workflows and agents across 9000+ apps with Zapier—the most connected AI orchestration platform. Trusted by 3 million+ businesses.',
-  },
-  {
-    name: 'Enphase',
-    icon: '/LumenNew/scanifly/logo-3b.png',
-    bg: '#ffffff',
-    description: 'Integrate Enphase inverter monitoring directly for project-specific system insights.',
+      'Bring the full power of AI workflows and agents to your business with the industry’s leading automation platform for businesses worldwide.',
   },
   {
     name: 'Google Sheets',
     icon: '/LumenNew/scanifly/logo-1.png',
     bg: '#ffffff',
     description:
-      'Transform your data into a living ecosystem with the Google Sheets integration, the ultimate bridge for automating workflows and centralizing information in real-time.',
+      'Process and interpret your business data faster than ever with access to Google Sheets, making centralizing information in Lumentrack easier.',
   },
   {
     name: 'Aurora Solar',
     icon: '/LumenNew/scanifly/logo-2.png',
     bg: '#ffffff',
-    description: 'Create a highly accurate solar design by using Aurora Solar.',
+    description:
+      'Import all previously-created solar installations on Aurora Solar to Lumentrack, removing unnecessary steps and making it easier for your teams to get hands to work.',
+  },
+  {
+    name: 'Enphase',
+    icon: '/LumenNew/scanifly/logo-3b.png',
+    bg: '#ffffff',
+    description: 'Receive live, in-site information of all your Enphase power infrastructure with just one click.',
+  },
+  {
+    name: 'BlueOps',
+    bg: '#2A85FF',
+    description: '',
+  },
+  {
+    name: 'ServiceLoop',
+    bg: '#14B8A6',
+    description: '',
+  },
+  {
+    name: 'FinalWalk',
+    bg: '#CB30E0',
+    description: '',
   },
 ]
 
@@ -31,11 +49,14 @@ export function IntegrationsToolsSection() {
   return (
     <section className="integrations-tools-section">
       <div className="integrations-tools-header">
-        <h2>All your tools, one unified platform</h2>
+        <h2>
+          Simplify your workflow
+          <br />
+          with Lumentrack Smart Integrations
+        </h2>
         <p>
-          Lumentrack brings together the best integrations to streamline your business. Whether it is automating
-          emails, managing finances, or creating proposals with design tools, our platform ensures everything works
-          together effortlessly.
+          More than a CRM. When used with our smart integrations, Lumentrack&reg; becomes the command center of your
+          business.
         </p>
       </div>
 
@@ -44,12 +65,29 @@ export function IntegrationsToolsSection() {
           {TOOLS.map((tool, i) => (
             <div key={i} className="integrations-tool-card">
               <div className="integrations-tool-icon" style={{ background: tool.bg }}>
-                <img src={tool.icon} alt={tool.name} />
+                {tool.icon ? (
+                  <img src={tool.icon} alt={tool.name} />
+                ) : (
+                  <span className="integrations-tool-icon-fallback">{tool.name.charAt(0)}</span>
+                )}
               </div>
               <h3>{tool.name}</h3>
-              <p>{tool.description}</p>
+              {tool.description && <p>{tool.description}</p>}
             </div>
           ))}
+
+          <div className="integrations-tool-card integrations-tool-card--more">
+            <p>And many more&hellip;</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="integrations-tools-cta">
+        <div className="btn-border-wrap mkt-start-btn-wrap">
+          <button className="mkt-start-btn">
+            Book a Demo
+            <ArrowRight size={18} />
+          </button>
         </div>
       </div>
     </section>

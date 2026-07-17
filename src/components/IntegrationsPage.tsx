@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { SiteNavbar } from './SiteNavbar'
 import { IntegrationsToolsSection } from './IntegrationsToolsSection'
 import { IntegrationsFeatureCards } from './IntegrationsFeatureCards'
+import { IntegrationsFinalCTA } from './IntegrationsFinalCTA'
 import './IntegrationsPage.css'
 
 const HEADING = 'Smart integrations simplify your workflow'
@@ -128,6 +129,8 @@ export function IntegrationsPage() {
       <IntegrationsToolsSection />
 
       <IntegrationsFeatureCards />
+
+      <IntegrationsFinalCTA />
     </div>
   )
 }
