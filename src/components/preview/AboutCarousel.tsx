@@ -145,9 +145,6 @@ export function AboutCarousel() {
                   <h3 className="title">{card.title}</h3>
                   <p className="desc">{card.desc}</p>
                 </div>
-                <a href="#" className="card-link">
-                  Learn more
-                </a>
               </div>
             </li>
           )
