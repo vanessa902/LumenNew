@@ -21,6 +21,15 @@ export function ImageScaleSection() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      // Start collapsed (small peeking mockup), reveal to full image on scroll.
+      gsap.set(boxOneRef.current, { scaleY: 1 })
+      gsap.set(boxTwoRef.current, { scaleX: 1 })
+      gsap.set(boxThreeRef.current, { scaleY: 0.7 })
+      gsap.set(boxFourRef.current, { scaleX: 1 })
+      gsap.set(imageWrapperRef.current, { xPercent: 50 })
+      gsap.set(imageRef.current, { xPercent: -40, scale: 0.9, transformOrigin: 'bottom center' })
+      gsap.set(overlayRef.current, { opacity: 1 })
+
       const counterObj = { val: 0 }
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -45,14 +54,14 @@ export function ImageScaleSection() {
         0
       )
         .to(headingRef.current, { duration: 60, color: '#DEDBC8' }, 0)
-        .to(imageWrapperRef.current, { xPercent: 50, duration: 20 }, 0)
-        .to(imageRef.current, { xPercent: -40, duration: 20 }, 0)
-        .to(imageRef.current, { transformOrigin: 'bottom center', scale: 0.9, duration: 70 }, 30)
-        .to(boxOneRef.current, { scaleY: 1, duration: 10 }, 30)
-        .to(boxTwoRef.current, { scaleX: 1, duration: 10 }, 40)
-        .to(boxThreeRef.current, { scaleY: 0.7, duration: 10 }, 50)
-        .to(boxFourRef.current, { scaleX: 1, duration: 10 }, 60)
-        .to(overlayRef.current, { opacity: 1, duration: 10 }, 95)
+        .to(overlayRef.current, { opacity: 0, duration: 10 }, 0)
+        .to(boxOneRef.current, { scaleY: 0, duration: 10 }, 30)
+        .to(boxTwoRef.current, { scaleX: 0, duration: 10 }, 40)
+        .to(boxThreeRef.current, { scaleY: 0, duration: 10 }, 50)
+        .to(boxFourRef.current, { scaleX: 0, duration: 10 }, 60)
+        .to(imageRef.current, { scale: 1, duration: 70 }, 30)
+        .to(imageWrapperRef.current, { xPercent: 0, duration: 20 }, 85)
+        .to(imageRef.current, { xPercent: 0, duration: 20 }, 85)
     }, sectionRef)
 
     return () => ctx.revert()
