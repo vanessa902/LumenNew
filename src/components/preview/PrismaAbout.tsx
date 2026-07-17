@@ -101,6 +101,7 @@ export function PrismaAbout({
       <div className="max-w-6xl mx-auto rounded-2xl p-8 md:p-16 text-center">
         <div
           className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl max-w-4xl mx-auto leading-[0.95] sm:leading-[0.9] ${gradientHover ? 'prisma-gradient-hover-wrap' : ''}`}
+          style={{ marginBottom: 40 }}
         >
           <TypewriterSegments segments={segments} />
         </div>
