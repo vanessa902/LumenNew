@@ -62,8 +62,8 @@ export function IntegrationsFeatureCards() {
   return (
     <div className="features-page" style={{ minHeight: 'auto', overflow: 'hidden' }}>
       <section
-        className="p-4 md:p-6 relative"
-        style={{ background: '#000', height: '80vh', overflow: 'hidden', isolation: 'isolate' }}
+        className="p-4 md:p-6 pb-16 relative"
+        style={{ background: '#000', minHeight: '80vh', overflow: 'hidden', isolation: 'isolate' }}
       >
         <div className="container">
           <div className="features-heading">
