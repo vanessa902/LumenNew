@@ -101,9 +101,24 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="relative select-none pointer-events-none pb-4">
-        <div className="whitespace-nowrap text-[10vw] font-extrabold tracking-tight text-white/10">
-          TRACK &middot; SELL &middot; GROW &middot; TRACK &middot; SELL &middot; GROW
+      <div className="relative select-none pointer-events-none pb-4 overflow-hidden">
+        <style>{`
+          @keyframes footer-marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .footer-marquee-track {
+            display: flex;
+            width: max-content;
+            animation: footer-marquee 22s linear infinite;
+          }
+        `}</style>
+        <div className="footer-marquee-track">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <span key={i} className="whitespace-nowrap text-[10vw] font-extrabold tracking-tight text-white/10 pr-8">
+              TRACK &middot; SELL &middot; GROW &middot; TRACK &middot; SELL &middot; GROW
+            </span>
+          ))}
         </div>
       </div>
     </footer>
