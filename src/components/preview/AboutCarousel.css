@@ -184,10 +184,15 @@
     transition: transform 0.3s ease;
   }
 
+  .preview-carousel .carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--ui-spacing-sm);
+    margin-block-start: var(--ui-spacing-sm);
+  }
+
   .preview-carousel .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     inline-size: 44px;
     block-size: 44px;
     border-radius: 999px;
@@ -206,12 +211,18 @@
     background: color-mix(in oklch, var(--ui-primary), transparent 80%);
   }
 
-  .preview-carousel .carousel-arrow-left {
-    left: 8px;
+  .preview-carousel .carousel-draggable {
+    cursor: grab;
   }
 
-  .preview-carousel .carousel-arrow-right {
-    right: 8px;
+  .preview-carousel .carousel-draggable[data-dragging='true'] {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+
+  .preview-carousel .carousel-draggable .card {
+    user-select: none;
   }
 
   .preview-carousel .carousel-zoom-overlay {
