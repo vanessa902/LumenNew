@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Zap, ClipboardList, CalendarDays, DollarSign, MonitorPlay, Sun, User } from 'lucide-react'
 
 const CARDS = [
@@ -147,11 +148,13 @@ export function AboutCarousel() {
         })}
       </ul>
 
-      {zoomed !== null && (
-        <div className="carousel-zoom-overlay" onMouseLeave={() => setZoomed(null)}>
-          <img src={CARDS[zoomed].img} alt={CARDS[zoomed].title} className="carousel-zoom-img" />
-        </div>
-      )}
+      {zoomed !== null &&
+        createPortal(
+          <div className="carousel-zoom-overlay" onMouseLeave={() => setZoomed(null)}>
+            <img src={CARDS[zoomed].img} alt={CARDS[zoomed].title} className="carousel-zoom-img" />
+          </div>,
+          document.body
+        )}
     </div>
   )
 }
