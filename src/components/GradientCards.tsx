@@ -43,14 +43,16 @@ export function GradientCards() {
         }
       `}</style>
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
-        {/* Left: product mockup placeholder */}
-        <div className="relative rounded-2xl border border-white/10 bg-[#0e0e10] overflow-hidden min-h-[320px] lg:min-h-full flex items-center justify-center">
-          <div className="absolute inset-0 opacity-40 blur-[1px]">
-            <div className="h-full w-full grid grid-cols-3 gap-2 p-3">
-              <div className="col-span-1 bg-white/5 rounded-md" />
-              <div className="col-span-2 bg-white/5 rounded-md" />
-            </div>
-          </div>
+        {/* Left: product video (no card chrome, just the video itself) */}
+        <div className="relative min-h-[320px] lg:min-h-full flex items-center justify-center">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-contain"
+            src="/LumenNew/editor-export.mp4"
+          />
         </div>
 
         {/* Right: 2 cards on top, 1 below */}
