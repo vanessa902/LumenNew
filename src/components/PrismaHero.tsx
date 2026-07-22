@@ -68,7 +68,7 @@ export function PrismaHero() {
             className="font-semibold leading-[0.85] tracking-[-0.07em] text-[13vw] sm:text-[12vw] md:text-[11vw] lg:text-[10vw] xl:text-[9.5vw] 2xl:text-[10vw] mb-2"
             style={{ color: '#E1E0CC', textShadow: '0 4px 32px rgba(0,0,0,0.7), 0 1px 8px rgba(0,0,0,0.5)' }}
           >
-            <TypeWriter phrases={['One plataform', 'Total Control']} />
+            <TypeWriter phrases={['One Platform', 'Total Control']} />
           </p>
           <div style={{ width: '64%' }}>
             <ParallaxMockup />
