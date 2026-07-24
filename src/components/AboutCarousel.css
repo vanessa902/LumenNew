@@ -62,44 +62,62 @@
   }
 
   .preview-carousel .cards {
+    --_carousel-inline-padding: var(--ui-spacing-sm);
     display: grid;
-    gap: var(--ui-spacing-md);
-    grid-template-columns: repeat(4, 1fr);
+    gap: var(--ui-spacing-sm);
+    grid-auto-flow: column;
+    grid-column: 2/-1;
     inline-size: 100%;
     list-style: none;
+    min-block-size: 340px;
+    overflow-inline: auto;
+    overscroll-behavior-inline: contain;
     padding-block: var(--ui-spacing-lg);
-    padding-inline: var(--ui-spacing-sm);
+    padding-inline: var(--_carousel-inline-padding);
+    scroll-behavior: smooth;
+    scroll-padding-inline: var(--_carousel-inline-padding);
+    scroll-snap-type: inline mandatory;
     margin: 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    scrollbar-width: none;
   }
 
-  @media (width < 900px) {
+  .preview-carousel .cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (width >=768px) {
     .preview-carousel .cards {
-      grid-template-columns: repeat(2, 1fr);
+      --_carousel-inline-padding: var(--ui-spacing-lg);
     }
   }
 
-  @media (width < 560px) {
-    .preview-carousel .cards {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .preview-carousel .card--flat {
+  .preview-carousel .card {
     position: relative;
+    scroll-snap-align: start;
     background-color: var(--ui-surface);
     border-radius: var(--ui-card-radius);
     box-shadow: var(--ui-card-shadow);
-    padding: var(--ui-spacing-md);
+    padding: var(--ui-spacing-xs);
+    inline-size: min(75cqi, 320px);
+    block-size: 340px;
     overflow: hidden;
-    min-block-size: 280px;
     display: flex;
     align-items: flex-end;
   }
 
-  .preview-carousel .card-gradient-bg {
+  .preview-carousel .carousel-card-glow {
     position: absolute;
     inset: 0;
     z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 100% 55% at 50% 0%,
+      color-mix(in srgb, var(--card-glow-color) 65%, transparent) 0%,
+      color-mix(in srgb, var(--card-glow-color) 25%, transparent) 35%,
+      transparent 70%
+    );
   }
 
   .preview-carousel .content {
@@ -127,6 +145,20 @@
     font: var(--ui-body);
     text-wrap: pretty;
     margin: 0;
+  }
+
+  .preview-carousel .carousel-draggable {
+    cursor: grab;
+  }
+
+  .preview-carousel .carousel-draggable[data-dragging='true'] {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+
+  .preview-carousel .carousel-draggable .card {
+    user-select: none;
   }
 
 }
