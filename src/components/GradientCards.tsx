@@ -1,6 +1,6 @@
 function Card() {
   return (
-    <div className="group relative rounded-2xl border border-white/10 bg-[#0e0e10] p-6 md:p-8 overflow-hidden h-full">
+    <div className="group relative rounded-2xl border border-white/10 bg-[#0e0e10] p-6 md:p-8 overflow-hidden" style={{ width: '90%' }}>
       <h3
         className="text-2xl md:text-3xl font-semibold mb-4 leading-tight bg-clip-text text-transparent transition-[background-image] duration-500"
         style={{ backgroundImage: 'linear-gradient(90deg, #fff, #fff)' }}
