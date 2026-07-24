@@ -62,68 +62,49 @@
   }
 
   .preview-carousel .cards {
-    --_carousel-inline-padding: var(--ui-spacing-sm);
     display: grid;
-    gap: var(--ui-spacing-sm);
-    grid-auto-flow: column;
-    grid-column: 2/-1;
-    grid-template-rows: 200px 1fr;
+    gap: var(--ui-spacing-md);
+    grid-template-columns: repeat(4, 1fr);
     inline-size: 100%;
     list-style: none;
-    min-block-size: 420px;
-    overflow-inline: auto;
-    overscroll-behavior-inline: contain;
     padding-block: var(--ui-spacing-lg);
-    padding-inline: var(--_carousel-inline-padding);
-    scroll-behavior: smooth;
-    scroll-padding-inline: var(--_carousel-inline-padding);
-    scroll-snap-type: inline mandatory;
+    padding-inline: var(--ui-spacing-sm);
     margin: 0;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-    scrollbar-width: none;
   }
 
-  .preview-carousel .cards::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media (width >=768px) {
+  @media (width < 900px) {
     .preview-carousel .cards {
-      --_carousel-inline-padding: var(--ui-spacing-lg);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  .preview-carousel .card {
+  @media (width < 560px) {
+    .preview-carousel .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .preview-carousel .card--flat {
     position: relative;
-    scroll-snap-align: start;
     background-color: var(--ui-surface);
     border-radius: var(--ui-card-radius);
     box-shadow: var(--ui-card-shadow);
-    display: grid;
-    grid-row: 1/-1;
-    grid-template-rows: subgrid;
-    padding: var(--ui-spacing-xs);
-    inline-size: min(75cqi, 320px);
+    padding: var(--ui-spacing-md);
     overflow: hidden;
+    min-block-size: 280px;
+    display: flex;
+    align-items: flex-end;
   }
 
-  .preview-carousel .visual {
-    position: relative;
-    z-index: 1;
-    border-radius: var(--ui-visual-radius);
-    overflow: visible;
-  }
-
-  .preview-carousel .img {
-    display: block;
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: contain;
-    background-color: transparent;
+  .preview-carousel .card-gradient-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
   }
 
   .preview-carousel .content {
+    position: relative;
+    z-index: 1;
     display: grid;
     align-content: space-between;
     padding: var(--ui-spacing-sm);
@@ -148,122 +129,4 @@
     margin: 0;
   }
 
-  .preview-carousel .card-link {
-    --_icon-bg: var(--ui-primary);
-    font: var(--ui-label);
-    color: var(--ui-primary);
-    text-decoration: none;
-    display: flex;
-    gap: var(--ui-spacing-xs);
-    align-items: center;
-  }
-
-  .preview-carousel .card-link:hover {
-    --_icon-bg: color-mix(in oklch, var(--ui-primary), var(--ui-on-surface) 8%);
-  }
-
-  .preview-carousel .card-link::before {
-    display: grid;
-    place-items: center;
-    background-color: var(--_icon-bg);
-    color: oklch(from var(--ui-primary) var(--contrast-fn) 0 h);
-    inline-size: var(--ui-icon-size);
-    block-size: var(--ui-icon-size);
-    border-radius: var(--ui-btn-radius);
-    font: var(--icon-font-small);
-    content: 'arrow_forward_ios' / 'Arrow';
-  }
-
-  .preview-carousel .feature-icon {
-    inline-size: 34px;
-    block-size: 34px;
-    border-radius: var(--ui-btn-radius);
-    display: grid;
-    place-items: center;
-    margin-block-end: var(--ui-spacing-xs);
-  }
-
-  .preview-carousel .carousel-visual {
-    inline-size: 90%;
-    block-size: 90%;
-    margin-inline: auto;
-    margin-block-start: 5%;
-  }
-
-  .preview-carousel .carousel-card-glow {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse 100% 55% at 50% 0%,
-      color-mix(in srgb, var(--card-glow-color) 65%, transparent) 0%,
-      color-mix(in srgb, var(--card-glow-color) 25%, transparent) 35%,
-      transparent 70%
-    );
-  }
-
-  .preview-carousel .carousel-img {
-    cursor: zoom-in;
-    transition: transform 0.3s ease;
-  }
-
-  .preview-carousel .carousel-draggable {
-    cursor: grab;
-  }
-
-  .preview-carousel .carousel-draggable[data-dragging='true'] {
-    cursor: grabbing;
-    scroll-snap-type: none;
-    scroll-behavior: auto;
-  }
-
-  .preview-carousel .carousel-draggable .card {
-    user-select: none;
-  }
-
-}
-
-/* Portaled to document.body, so must live outside the scoped layer/selectors above. */
-.carousel-zoom-overlay {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  pointer-events: none;
-}
-
-.carousel-zoom-box {
-  pointer-events: auto;
-  background: #1c1c1e;
-  border-radius: 24px;
-  padding: 28px;
-  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
-  display: grid;
-  place-items: center;
-  animation: carousel-zoom-box-in 0.18s ease both;
-  inline-size: min(80vw, 720px);
-  block-size: min(75vh, 560px);
-}
-
-.carousel-zoom-img {
-  max-inline-size: 100%;
-  max-block-size: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 12px;
-}
-
-@keyframes carousel-zoom-box-in {
-  from {
-    opacity: 0;
-    transform: scale(0.94);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
