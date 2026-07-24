@@ -61,9 +61,7 @@ export function ImageScaleSection() {
         .to(boxThreeRef.current, { scaleY: 0, duration: 10 }, 50)
         .to(boxFourRef.current, { scaleX: 0, duration: 10 }, 60)
         .to(imageRef.current, { scale: 1, duration: 70 }, 30)
-        .to(imageWrapperRef.current, { xPercent: 0, duration: 20 }, 85)
         .to(imageRef.current, { xPercent: 0, duration: 20 }, 85)
-        .to(leftRef.current, { opacity: 0, duration: 15 }, 90)
     }, sectionRef)
 
     return () => ctx.revert()
