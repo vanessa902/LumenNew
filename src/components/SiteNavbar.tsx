@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { User } from 'lucide-react'
 
 const NAV_ITEMS: { label: string; href: string }[] = [
   { label: 'Home', href: '/' },
@@ -51,8 +52,9 @@ export function SiteNavbar() {
         `}</style>
         <Link
           to="/login"
-          className="inline-flex items-center rounded-full border border-white/15 px-3.5 py-1.5 md:px-5 md:py-2 text-[10px] sm:text-xs md:text-sm font-medium text-white/80 hover:text-white hover:border-white/30 transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 md:px-5 md:py-2 text-[10px] sm:text-xs md:text-sm font-medium text-white/80 backdrop-blur-md hover:text-white hover:bg-white/15 hover:border-white/30 transition-colors"
         >
+          <User className="w-3.5 h-3.5" />
           Login
         </Link>
         <Link
