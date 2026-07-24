@@ -1,28 +1,21 @@
-const CARDS = [
-  {
-    title: 'Organized Sales Flow',
-    desc: 'Track every lead, proposal, and installation in one place. Keep your sales team aligned with full access to the work pipeline at every step.',
-  },
-  {
-    title: 'Easy for Teams',
-    desc: 'With minimal training required, everyone – from your internal staff to external vendors and collaborators – can keep track of what’s happening in your business.',
-  },
-  {
-    title: 'Customizable Interface',
-    desc: 'Each business has different needs. Lumentrack® can fit them all. Whether you’re tracking a solar installation, keeping in touch with your workforce, or drafting a new proposal, this is the only CRM solution you’ll ever need.',
-  },
-]
-
-function Card({ title, desc }: { title: string; desc: string }) {
+function Card() {
   return (
-    <div className="group relative rounded-2xl border border-white/10 bg-[#0e0e10] p-6 overflow-hidden h-full">
+    <div className="group relative rounded-2xl border border-white/10 bg-[#0e0e10] p-6 md:p-8 overflow-hidden h-full">
       <h3
-        className="text-2xl font-semibold mb-3 bg-clip-text text-transparent transition-[background-image] duration-500"
+        className="text-2xl md:text-3xl font-semibold mb-4 leading-tight bg-clip-text text-transparent transition-[background-image] duration-500"
         style={{ backgroundImage: 'linear-gradient(90deg, #fff, #fff)' }}
       >
-        <span className="gradient-hover-title">{title}</span>
+        <span className="gradient-hover-title">
+          A state-of-the-art tool designed from scratch with one goal in mind: simple, painless management
+        </span>
       </h3>
-      <p className="text-sm text-white/60">{desc}</p>
+      <p className="text-sm text-white/60 mb-3">
+        Lumentrack is more than a CRM. It is the command room of your entire business.
+      </p>
+      <p className="text-sm text-white/60">
+        Built from the ground up with integration and customization in mind, no other CRM in the marketplace offers
+        the plethora of features that Lumentrack&reg; puts at your fingertips.
+      </p>
     </div>
   )
 }
@@ -55,14 +48,8 @@ export function GradientCards() {
           />
         </div>
 
-        {/* Right: 2 cards on top, 1 below */}
-        <div className="grid grid-cols-1 gap-5">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <Card title={CARDS[0].title} desc={CARDS[0].desc} />
-            <Card title={CARDS[1].title} desc={CARDS[1].desc} />
-          </div>
-          <Card title={CARDS[2].title} desc={CARDS[2].desc} />
-        </div>
+        {/* Right: single card */}
+        <Card />
       </div>
     </section>
   )
