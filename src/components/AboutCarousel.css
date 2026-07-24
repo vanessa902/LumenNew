@@ -112,18 +112,19 @@
     position: relative;
     z-index: 1;
     inline-size: 100%;
+    block-size: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: var(--ui-spacing-md) var(--ui-spacing-sm);
+    justify-content: flex-start;
+    padding: var(--ui-spacing-md);
     color: var(--ui-on-surface);
   }
 
   .preview-carousel .content-wrapper {
     display: grid;
-    justify-items: center;
+    justify-items: start;
     gap: var(--ui-spacing-sm);
-    text-align: center;
+    text-align: left;
   }
 
   .preview-carousel .feature-icon {
@@ -138,7 +139,7 @@
   .preview-carousel .title {
     font: var(--ui-title);
     text-wrap: pretty;
-    margin: 0 0 var(--ui-spacing-xs);
+    margin: 0;
   }
 
   .preview-carousel .desc {
