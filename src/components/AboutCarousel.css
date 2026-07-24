@@ -121,8 +121,18 @@
 
   .preview-carousel .content-wrapper {
     display: grid;
+    justify-items: center;
     gap: var(--ui-spacing-sm);
     text-align: center;
+  }
+
+  .preview-carousel .feature-icon {
+    inline-size: 40px;
+    block-size: 40px;
+    border-radius: var(--ui-btn-radius);
+    display: grid;
+    place-items: center;
+    margin-block-end: var(--ui-spacing-xs);
   }
 
   .preview-carousel .title {
