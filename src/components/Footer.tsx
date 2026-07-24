@@ -112,10 +112,17 @@ export function Footer() {
             width: max-content;
             animation: footer-marquee 22s linear infinite;
           }
+          .footer-marquee-text {
+            background-image: linear-gradient(90deg, #2A85FF, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0.5;
+          }
         `}</style>
         <div className="footer-marquee-track">
           {Array.from({ length: 2 }).map((_, i) => (
-            <span key={i} className="whitespace-nowrap text-[10vw] font-extrabold tracking-tight text-white/10 pr-8">
+            <span key={i} className="footer-marquee-text whitespace-nowrap text-[10vw] font-extrabold tracking-tight pr-8">
               TRACK &middot; SELL &middot; GROW &middot; TRACK &middot; SELL &middot; GROW
             </span>
           ))}

@@ -30,7 +30,7 @@ export function SiteNavbar() {
         </div>
       </div>
 
-      <div className="fixed top-2 md:top-3 right-3 md:right-6 z-50">
+      <div className="fixed top-2 md:top-3 right-3 md:right-6 z-50 flex items-center gap-2 md:gap-3">
         <style>{`
           @keyframes navbar-book-demo-sheen {
             0% { background-position: 0% 50%; }
@@ -49,6 +49,12 @@ export function SiteNavbar() {
             animation: navbar-book-demo-sheen 5s linear infinite;
           }
         `}</style>
+        <Link
+          to="/login"
+          className="inline-flex items-center rounded-full border border-white/15 px-3.5 py-1.5 md:px-5 md:py-2 text-[10px] sm:text-xs md:text-sm font-medium text-white/80 hover:text-white hover:border-white/30 transition-colors"
+        >
+          Login
+        </Link>
         <Link
           to="/contact"
           className="navbar-book-demo-btn inline-flex items-center gap-1.5 rounded-full border border-[#2A85FF]/50 px-3.5 py-1.5 md:px-5 md:py-2 text-[10px] sm:text-xs md:text-sm font-semibold text-white backdrop-blur-md shadow-[0_0_20px_-4px_rgba(42,133,255,0.6)] transition-transform hover:scale-105"
