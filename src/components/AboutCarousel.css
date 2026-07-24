@@ -62,49 +62,37 @@
   }
 
   .preview-carousel .cards {
-    --_carousel-inline-padding: var(--ui-spacing-sm);
     display: grid;
     gap: var(--ui-spacing-sm);
-    grid-auto-flow: column;
-    grid-column: 2/-1;
+    grid-template-columns: repeat(4, 1fr);
     inline-size: 100%;
     list-style: none;
-    min-block-size: 340px;
-    overflow-inline: auto;
-    overscroll-behavior-inline: contain;
     padding-block: var(--ui-spacing-lg);
-    padding-inline: var(--_carousel-inline-padding);
-    scroll-behavior: smooth;
-    scroll-padding-inline: var(--_carousel-inline-padding);
-    scroll-snap-type: inline mandatory;
+    padding-inline: var(--ui-spacing-sm);
     margin: 0;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-    scrollbar-width: none;
   }
 
-  .preview-carousel .cards::-webkit-scrollbar {
-    display: none;
-  }
-
-  @media (width >=768px) {
+  @media (width < 900px) {
     .preview-carousel .cards {
-      --_carousel-inline-padding: var(--ui-spacing-lg);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (width < 560px) {
+    .preview-carousel .cards {
+      grid-template-columns: 1fr;
     }
   }
 
   .preview-carousel .card {
     position: relative;
-    scroll-snap-align: start;
     background-color: var(--ui-surface);
     border-radius: var(--ui-card-radius);
     box-shadow: var(--ui-card-shadow);
     padding: var(--ui-spacing-xs);
-    inline-size: min(75cqi, 320px);
     block-size: 340px;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
   }
 
   .preview-carousel .carousel-card-glow {
@@ -123,42 +111,33 @@
   .preview-carousel .content {
     position: relative;
     z-index: 1;
-    display: grid;
-    align-content: space-between;
-    padding: var(--ui-spacing-sm);
-    gap: var(--ui-spacing-lg);
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--ui-spacing-md) var(--ui-spacing-sm);
     color: var(--ui-on-surface);
   }
 
   .preview-carousel .content-wrapper {
     display: grid;
     gap: var(--ui-spacing-sm);
+    text-align: center;
   }
 
   .preview-carousel .title {
     font: var(--ui-title);
     text-wrap: pretty;
-    margin: 0;
+    margin: 0 0 var(--ui-spacing-xs);
   }
 
   .preview-carousel .desc {
-    font: var(--ui-body);
+    font-family: var(--base-font), var(--font-system-ui);
+    font-weight: var(--font-weight-4);
+    font-size: var(--font-size-1);
+    line-height: var(--font-lineheight-3);
     text-wrap: pretty;
     margin: 0;
-  }
-
-  .preview-carousel .carousel-draggable {
-    cursor: grab;
-  }
-
-  .preview-carousel .carousel-draggable[data-dragging='true'] {
-    cursor: grabbing;
-    scroll-snap-type: none;
-    scroll-behavior: auto;
-  }
-
-  .preview-carousel .carousel-draggable .card {
-    user-select: none;
   }
 
 }
